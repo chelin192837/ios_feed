@@ -1,0 +1,3 @@
+#import "header.h"
+
+nslog(@"hello world");
