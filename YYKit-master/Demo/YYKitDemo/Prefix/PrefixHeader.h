@@ -19,6 +19,7 @@
 #import "MBProgressHUD.h"
 #import "NSString+Extend.h"
 #import "UIColor+Extend.h"
+#import "YYCGUtilities.h"
 
 #define WEAK_SELF __weak typeof(self)weakSelf = self;
 #define KDefault_BlankPhone          @"此用户电话未公开"
@@ -32,6 +33,7 @@
 #define DefaultColorOfGreen [UIColor colorFromHexRGB:@"00AF36"]
 #import "UIColor+SDCustomColor.h"
 #import "UIView+CustomFrame.h"
+#import "UIView+YYAdd.h"
 
 #define DefaultProImage [UIImage imageNamed:@"myMorentouxiangIcon"]
 #define kBuilding_Placeholder  [UIImage imageNamed:@"picBuiliding"]

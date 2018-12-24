@@ -104,6 +104,7 @@
     });
 }
 
+
 - (void)sendStatus {
     WBStatusComposeViewController *vc = [WBStatusComposeViewController new];
     vc.type = WBStatusComposeViewTypeStatus;

@@ -62,6 +62,27 @@
         RSDHomeListResponse *responseModel = response;
         RSDHomeListModel *listModel = responseModel.data;
         NSArray *dataModelArray = listModel.list;
+        //*****************************
+        //取前30条置业顾问
+        NSMutableArray* buildArray = [NSMutableArray array];
+        int kFlag = (int)buildArray.count;
+        for (RSDHomeBuildingModel* model in dataModelArray) {
+            [buildArray addObjectsFromArray:model.counselor_list];
+        }
+        if (buildArray.count>30) {
+            [buildArray subarrayWithRange:NSMakeRange(0, 30)];
+            kFlag = 30 ;
+        }
+        for (RSDHomeBuildingModel* model in dataModelArray) {
+            //乱序 30条
+            NSMutableArray* kBuildArray = [NSMutableArray array];
+            for (int j=0; j < kFlag; j++) {
+                int x = arc4random() % (kFlag-1);
+                [kBuildArray addObject:buildArray[x]];
+            }
+            model.counselor_list = (NSArray<RSDCounselorInfoModel>*)kBuildArray;
+        }
+        //***************************
         if (weakSelf.tableView.mj_header.state == MJRefreshStateRefreshing) {
             [weakSelf.dataArray removeAllObjects];
         }
@@ -90,6 +111,10 @@
     
     weakSelf.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         weakSelf.page++;
+        //第五页就是假数据
+        if (weakSelf.page == 5) {
+            weakSelf.page = 1;
+        }
         [weakSelf getData];
     }];
     
@@ -112,6 +137,38 @@
 }
 
 
+
+
+@end
+
+#pragma mark - RSDHomeTitleCell
+@interface RSDNoteTitleCell ()
+
+
+@end
+
+@implementation RSDNoteTitleCell
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.backgroundColor = [UIColor clearColor];
+        [self setupUI];
+    }
+    return self;
+}
+
+- (void)setupUI{
+    self.titleLabel = [[UILabel alloc]init];
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    self.titleLabel.textColor = rgb(102, 102, 102);
+    self.titleLabel.font = [UIFont systemFontOfSize:16.0];
+    [self.contentView addSubview:self.titleLabel];
+    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.contentView);
+    }];
+}
 
 
 @end

@@ -10,6 +10,8 @@
 		6248BB0A21CCB11600B56970 /* homeTuijiankehuBtn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6248BB0721CCB11600B56970 /* homeTuijiankehuBtn@3x.png */; };
 		6248BB0B21CCB11600B56970 /* homeTuijiankehuBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6248BB0821CCB11600B56970 /* homeTuijiankehuBtn@2x.png */; };
 		6248BB0C21CCB11600B56970 /* homeTuijiankehuBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 6248BB0921CCB11600B56970 /* homeTuijiankehuBtn.png */; };
+		6248BB0E21CCC2A400B56970 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6248BB0D21CCC2A400B56970 /* Images.xcassets */; };
+		6248BB1121CCF0C000B56970 /* RSDRDiscover.m in Sources */ = {isa = PBXBuildFile; fileRef = 6248BB0F21CCF0C000B56970 /* RSDRDiscover.m */; };
 		6262908D21AE8810000D9E68 /* YYLabelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6262908C21AE8810000D9E68 /* YYLabelVC.m */; };
 		626DB66B21C7A917009386F7 /* YYInterfanceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 626DB66321C7A917009386F7 /* YYInterfanceService.m */; };
 		626DB66C21C7A917009386F7 /* RSDHomeListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 626DB66521C7A917009386F7 /* RSDHomeListRequest.m */; };
@@ -317,6 +319,9 @@
 		6248BB0721CCB11600B56970 /* homeTuijiankehuBtn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homeTuijiankehuBtn@3x.png"; sourceTree = "<group>"; };
 		6248BB0821CCB11600B56970 /* homeTuijiankehuBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homeTuijiankehuBtn@2x.png"; sourceTree = "<group>"; };
 		6248BB0921CCB11600B56970 /* homeTuijiankehuBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeTuijiankehuBtn.png; sourceTree = "<group>"; };
+		6248BB0D21CCC2A400B56970 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6248BB0F21CCF0C000B56970 /* RSDRDiscover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDRDiscover.m; sourceTree = "<group>"; };
+		6248BB1021CCF0C000B56970 /* RSDRDiscover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDRDiscover.h; sourceTree = "<group>"; };
 		6262908B21AE8810000D9E68 /* YYLabelVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYLabelVC.h; sourceTree = "<group>"; };
 		6262908C21AE8810000D9E68 /* YYLabelVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYLabelVC.m; sourceTree = "<group>"; };
 		626DB66321C7A917009386F7 /* YYInterfanceService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYInterfanceService.m; sourceTree = "<group>"; };
@@ -1446,6 +1451,8 @@
 		62A5D82421BE0E360061D7BD /* NetWorking */ = {
 			isa = PBXGroup;
 			children = (
+				6248BB1021CCF0C000B56970 /* RSDRDiscover.h */,
+				6248BB0F21CCF0C000B56970 /* RSDRDiscover.m */,
 				626DB91721C92450009386F7 /* View */,
 				62A5D82521BE0E4E0061D7BD /* YYNetWorkingVC.h */,
 				62A5D82621BE0E4E0061D7BD /* YYNetWorkingVC.m */,
@@ -1731,6 +1738,7 @@
 				D9067E041B98A39200F346EB /* Feed List */,
 				D91A99351B5A8D3D00EF3A3E /* Other */,
 				D943B49119EC316300A9481E /* Resources */,
+				6248BB0D21CCC2A400B56970 /* Images.xcassets */,
 				D97484D319CAAD2900F46DE1 /* Supporting Files */,
 			);
 			path = YYKitDemo;
@@ -2125,6 +2133,7 @@
 				6291D02A21CA779F00DF212D /* myMorentouxiangIcon@3x.png in Resources */,
 				D98193431BCAD3EF00BA0604 /* ResourceTwitter.bundle in Resources */,
 				D939F5E11B7CB044003EEC6A /* dribbble64_imageio.png in Resources */,
+				6248BB0E21CCC2A400B56970 /* Images.xcassets in Resources */,
 				6248BB0C21CCB11600B56970 /* homeTuijiankehuBtn.png in Resources */,
 				D98193291BC8067C00BA0604 /* Weibo@3x.jpg in Resources */,
 				D91A995F1B5ADA3900EF3A3E /* nyancat@2x.webp in Resources */,
@@ -2300,6 +2309,7 @@
 				D9B260801BEE79370038C00A /* YYClassInfo.m in Sources */,
 				626DB90C21C8C96D009386F7 /* SDImageCache.m in Sources */,
 				D9B260981BEE79370038C00A /* YYGestureRecognizer.m in Sources */,
+				6248BB1121CCF0C000B56970 /* RSDRDiscover.m in Sources */,
 				626DB85B21C7B12A009386F7 /* UIButton+AFNetworking.m in Sources */,
 				D92FF8651BC7FF0E00FFEBF4 /* T1HomeTimelineItemsViewController.m in Sources */,
 				D9B2608D1BEE79370038C00A /* YYTextArchiver.m in Sources */,
@@ -2529,6 +2539,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				COMPRESS_PNG_FILES = NO;
 				DEVELOPMENT_TEAM = Q3B2QN7W4Q;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2562,6 +2574,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				COMPRESS_PNG_FILES = NO;
 				DEVELOPMENT_TEAM = Q3B2QN7W4Q;
 				FRAMEWORK_SEARCH_PATHS = (

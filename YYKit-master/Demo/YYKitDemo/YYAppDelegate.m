@@ -8,9 +8,11 @@
 
 #import "YYAppDelegate.h"
 #import "YYRootViewController.h"
+#import "YYFPSLabel.h"
 
 /// Fix the navigation bar height when hide status bar.
 @interface YYExampleNavBar : UINavigationBar
+
 @end
 
 @implementation YYExampleNavBar {
@@ -33,14 +35,29 @@
         [self.layer.sublayers makeObjectsPerformSelector:@selector(removeAllAnimations)];
     }
 }
-
 @end
 
+
 @interface YYExampleNavController : UINavigationController
+@property (nonatomic, strong) YYFPSLabel *fpsLabel;
 @end
 @implementation YYExampleNavController
 - (BOOL)shouldAutorotate {
     return YES;
+}
+
+-(instancetype)initWithNavigationBarClass:(Class)navigationBarClass toolbarClass:(Class)toolbarClass
+{
+    if (self = [super initWithNavigationBarClass:navigationBarClass toolbarClass:toolbarClass]) {
+//        NSLog(@"__zxy__11:12");
+        _fpsLabel = [YYFPSLabel new];
+        [_fpsLabel sizeToFit];
+        _fpsLabel.top =  4.f;
+        _fpsLabel.left = self.view.width/2 + _fpsLabel.width - 10;
+        _fpsLabel.alpha = 1;
+        [self.view addSubview:_fpsLabel];
+    }
+    return self;
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {

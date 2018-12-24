@@ -9,7 +9,7 @@
 #import "YYFPSLabel.h"
 #import "YYKit.h"
 
-#define kSize CGSizeMake(55, 20)
+#define kSize CGSizeMake(40, 15)
 
 @implementation YYFPSLabel {
     CADisplayLink *_link;
@@ -33,12 +33,13 @@
     self.userInteractionEnabled = NO;
     self.backgroundColor = [UIColor colorWithWhite:0.000 alpha:0.700];
     
-    _font = [UIFont fontWithName:@"Menlo" size:14];
+    _font = [UIFont fontWithName:@"Menlo" size:10];
+    
     if (_font) {
-        _subFont = [UIFont fontWithName:@"Menlo" size:4];
+        _subFont = [UIFont fontWithName:@"Menlo" size:10];
     } else {
-        _font = [UIFont fontWithName:@"Courier" size:14];
-        _subFont = [UIFont fontWithName:@"Courier" size:4];
+        _font = [UIFont fontWithName:@"Courier" size:10];
+        _subFont = [UIFont fontWithName:@"Courier" size:10];
     }
     
     _link = [CADisplayLink displayLinkWithTarget:[YYWeakProxy proxyWithTarget:self] selector:@selector(tick:)];

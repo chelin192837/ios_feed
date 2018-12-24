@@ -14,4 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface RSDNoteTitleCell : UICollectionViewCell
+
+@property (nonatomic,strong) UILabel *titleLabel;
+
+@end
+
 NS_ASSUME_NONNULL_END
