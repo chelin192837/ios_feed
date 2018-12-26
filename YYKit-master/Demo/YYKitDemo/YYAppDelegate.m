@@ -68,6 +68,12 @@
     return UIInterfaceOrientationPortrait;
 }
 
+-(void)testSourceTree
+{
+    NSLog(@"__%s");
+    NSLog(@"%@",__func__);
+}
+
 @end
 
 
