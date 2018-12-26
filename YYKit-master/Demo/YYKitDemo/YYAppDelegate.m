@@ -70,6 +70,7 @@
 
 -(void)testSourceTree
 {
+    NSLog(@"__%s");
     NSLog(@"%@",__func__);
 }
 
