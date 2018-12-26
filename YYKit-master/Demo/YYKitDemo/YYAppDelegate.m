@@ -50,6 +50,11 @@
 {
     if (self = [super initWithNavigationBarClass:navigationBarClass toolbarClass:toolbarClass]) {
 //        NSLog(@"__zxy__11:12");
+        //
+        // FPS的监控测试
+        //
+        // sourceStree -> 
+        //
         _fpsLabel = [YYFPSLabel new];
         [_fpsLabel sizeToFit];
         _fpsLabel.top =  4.f;
