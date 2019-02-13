@@ -60,9 +60,15 @@
  */
 +(NSDateComponents *)dateComponents:(NSCalendarUnit)unit fromDate:(NSDate *)fromDate toDate:(NSDate *)toDate;
 
+/*
+ *
+ *获取指定时间距离现在的秒数
+ *
+ */
+-(NSInteger)secondDate:(NSString*)date;
 
+-(NSString*)NSDateConversionNSString;
 
-
-
++(NSDate *)nsstringConversionNSDate:(NSString *)dateStr;
 
 @end

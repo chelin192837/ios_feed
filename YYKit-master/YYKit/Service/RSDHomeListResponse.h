@@ -21,6 +21,8 @@
 @protocol RSDBuildingLabelModel <NSObject>
 @end
 
+@protocol RSDHomeListModel <NSObject>
+@end
 @interface RSDHomeListResponse : RSDBaseResponse
 ///
 @property (nonatomic,strong) RSDHomeListModel *data;

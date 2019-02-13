@@ -117,6 +117,8 @@
 		626DB92521C927B8009386F7 /* RSDLabelsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 626DB92221C927B8009386F7 /* RSDLabelsCell.xib */; };
 		626DB92621C927B8009386F7 /* RSDLabelsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 626DB92421C927B8009386F7 /* RSDLabelsCell.m */; };
 		6283989F21B533F30006EEA1 /* YYTextVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6283989E21B533F30006EEA1 /* YYTextVC.m */; };
+		6284B70521F0792500FE7A60 /* YYExposure.m in Sources */ = {isa = PBXBuildFile; fileRef = 6284B70421F0792500FE7A60 /* YYExposure.m */; };
+		6284B70821F07DCB00FE7A60 /* YYExposureInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 6284B70721F07DCB00FE7A60 /* YYExposureInstance.m */; };
 		6291D01C21CA6EB700DF212D /* UIView+CustomFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6291D01A21CA6EB700DF212D /* UIView+CustomFrame.m */; };
 		6291D01F21CA703500DF212D /* RSDEdgeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6291D01D21CA703400DF212D /* RSDEdgeLabel.m */; };
 		6291D02721CA779F00DF212D /* picBuiliding.png in Resources */ = {isa = PBXBuildFile; fileRef = 6291D02121CA779F00DF212D /* picBuiliding.png */; };
@@ -543,6 +545,10 @@
 		626DB92421C927B8009386F7 /* RSDLabelsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDLabelsCell.m; sourceTree = "<group>"; };
 		6283989D21B533F30006EEA1 /* YYTextVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYTextVC.h; sourceTree = "<group>"; };
 		6283989E21B533F30006EEA1 /* YYTextVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYTextVC.m; sourceTree = "<group>"; };
+		6284B70321F0792500FE7A60 /* YYExposure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYExposure.h; sourceTree = "<group>"; };
+		6284B70421F0792500FE7A60 /* YYExposure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYExposure.m; sourceTree = "<group>"; };
+		6284B70621F07DCB00FE7A60 /* YYExposureInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYExposureInstance.h; sourceTree = "<group>"; };
+		6284B70721F07DCB00FE7A60 /* YYExposureInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYExposureInstance.m; sourceTree = "<group>"; };
 		6291D01A21CA6EB700DF212D /* UIView+CustomFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CustomFrame.m"; sourceTree = "<group>"; };
 		6291D01B21CA6EB700DF212D /* UIView+CustomFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CustomFrame.h"; sourceTree = "<group>"; };
 		6291D01D21CA703400DF212D /* RSDEdgeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDEdgeLabel.m; sourceTree = "<group>"; };
@@ -1518,6 +1524,10 @@
 			children = (
 				D91A993C1B5A8DC200EF3A3E /* YYModelExample.h */,
 				D91A993D1B5A8DC200EF3A3E /* YYModelExample.m */,
+				6284B70321F0792500FE7A60 /* YYExposure.h */,
+				6284B70421F0792500FE7A60 /* YYExposure.m */,
+				6284B70621F07DCB00FE7A60 /* YYExposureInstance.h */,
+				6284B70721F07DCB00FE7A60 /* YYExposureInstance.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -2335,6 +2345,7 @@
 				D98193411BCAB84F00BA0604 /* T1Helper.m in Sources */,
 				D98193251BC801CF00BA0604 /* T1Model.m in Sources */,
 				D9B260771BEE79370038C00A /* YYAnimatedImageView.m in Sources */,
+				6284B70821F07DCB00FE7A60 /* YYExposureInstance.m in Sources */,
 				626DB90421C8C96D009386F7 /* SDWebImageManager.m in Sources */,
 				D9B2608A1BEE79370038C00A /* NSAttributedString+YYText.m in Sources */,
 				D9067E201B9A0B8F00F346EB /* WBStatusCell.m in Sources */,
@@ -2411,6 +2422,7 @@
 				62A5D82721BE0E4E0061D7BD /* YYNetWorkingVC.m in Sources */,
 				626DB85121C7B12A009386F7 /* JSONModelClassProperty.m in Sources */,
 				626DB87621C7B12A009386F7 /* MJRefreshFooter.m in Sources */,
+				6284B70521F0792500FE7A60 /* YYExposure.m in Sources */,
 				D9B260551BEE79370038C00A /* NSKeyedUnarchiver+YYAdd.m in Sources */,
 				D9B260521BEE79370038C00A /* NSData+YYAdd.m in Sources */,
 				626DB67121C7A969009386F7 /* ODNetWorkTool.m in Sources */,

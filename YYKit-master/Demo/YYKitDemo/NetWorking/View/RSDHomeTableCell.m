@@ -63,6 +63,7 @@ static NSString *kDonsultantCellID = @"kDonsultantCellID";
 @property (weak, nonatomic) IBOutlet UIButton *shareBtn;
 @property (weak, nonatomic) IBOutlet UIButton *messageBtn;
 @property (nonatomic,assign) BOOL isNotEnableClick;
+@property (weak, nonatomic) IBOutlet UILabel *cellRow;
 
 @end
 
@@ -138,7 +139,11 @@ static NSString *kDonsultantCellID = @"kDonsultantCellID";
 //    [self.redPacketBtn setBackgroundImage:tempImage forState:UIControlStateNormal];
     
 }
-
+-(void)setIndexPath:(NSIndexPath *)indexPath{
+    _indexPath = indexPath ;
+    
+//    self.cellRow.text = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
+}
 
 
 - (void)setDataModel:(RSDHomeBuildingModel *)dataModel{
@@ -206,6 +211,9 @@ static NSString *kDonsultantCellID = @"kDonsultantCellID";
     }
     
     
+    
+    self.cellRow.text = [NSString stringWithFormat:@"%@",dataModel.id];
+
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{

@@ -11,6 +11,8 @@
 #import "RSDHomeListRequest.h"
 #import "RSDHomeTableCell.h"
 #import "MJRefresh.h"
+#import "YYExposure.h"
+#import "YYExposureInstance.h"
 
 @interface YYNetWorkingVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -19,6 +21,7 @@
 @property(nonatomic,strong)NSMutableArray * dataArray;
 
 @property (nonatomic,assign) NSInteger page;
+
 
 @end
 
@@ -34,6 +37,7 @@
     
     [self.tableView.mj_header beginRefreshing];
 }
+
 -(UITableView*)tableView
 {
     if (!_tableView) {
@@ -57,39 +61,47 @@
 -(void)getData{
     RSDHomeListRequest * request = [[RSDHomeListRequest alloc] init];
     request.page = self.page ;
+    NSLog(@"------getData");
     WEAK_SELF
     [[YYInterfanceService sharedInstance] analyticalHomeData_3102:request serverSuccessResultHandler:^(id response) {
         RSDHomeListResponse *responseModel = response;
-        RSDHomeListModel *listModel = responseModel.data;
-        NSArray *dataModelArray = listModel.list;
         //*****************************
         //取前30条置业顾问
-        NSMutableArray* buildArray = [NSMutableArray array];
-        int kFlag = (int)buildArray.count;
-        for (RSDHomeBuildingModel* model in dataModelArray) {
-            [buildArray addObjectsFromArray:model.counselor_list];
-        }
-        if (buildArray.count>30) {
-            [buildArray subarrayWithRange:NSMakeRange(0, 30)];
-            kFlag = 30 ;
-        }
-        for (RSDHomeBuildingModel* model in dataModelArray) {
-            //乱序 30条
-            NSMutableArray* kBuildArray = [NSMutableArray array];
-            for (int j=0; j < kFlag; j++) {
-                int x = arc4random() % (kFlag-1);
-                [kBuildArray addObject:buildArray[x]];
-            }
-            model.counselor_list = (NSArray<RSDCounselorInfoModel>*)kBuildArray;
-        }
+//        NSMutableArray* buildArray = [NSMutableArray array];
+//        int kFlag = (int)buildArray.count;
+//        for (RSDHomeBuildingModel* model in responseModel.data.list) {
+//            [buildArray addObjectsFromArray:model.counselor_list];
+//        }
+//        if (buildArray.count>30) {
+//            [buildArray subarrayWithRange:NSMakeRange(0, 30)];
+//            kFlag = 30 ;
+//        }
+//        for (RSDHomeBuildingModel* model in responseModel.data.list) {
+//            //乱序 30条
+//            NSMutableArray* kBuildArray = [NSMutableArray array];
+//            for (int j=0; j < kFlag; j++) {
+//                int x = arc4random() % (kFlag-1);
+//                [kBuildArray addObject:buildArray[x]];
+//            }
+//            model.counselor_list = (NSArray<RSDCounselorInfoModel>*)kBuildArray;
+//        }
         //***************************
         if (weakSelf.tableView.mj_header.state == MJRefreshStateRefreshing) {
             [weakSelf.dataArray removeAllObjects];
         }
-        [weakSelf.dataArray addObjectsFromArray:dataModelArray];
+        [weakSelf.dataArray addObjectsFromArray:responseModel.data.list];
+        if (weakSelf.dataArray.count>0) {
+            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                [[YYExposureInstance shareInstance] setExposureArr:weakSelf.dataArray];
+                NSLog(@"分线程-----%@",[NSThread currentThread]);
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    NSLog(@"主线程-----%@",[NSThread currentThread]);
+                    [weakSelf.tableView reloadData];
+                });
+            });
+        }
         [weakSelf.tableView.mj_header endRefreshing];
         [weakSelf.tableView.mj_footer endRefreshing];
-        [weakSelf.tableView reloadData];
     } failedResultHandler:^(id response) {
         [weakSelf.tableView.mj_header endRefreshing];
         [weakSelf.tableView.mj_footer endRefreshing];
@@ -125,15 +137,31 @@
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     RSDHomeTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID" forIndexPath:indexPath];
-        cell.dataModel = self.dataArray[indexPath.row];
-        return cell;
+    cell.dataModel = self.dataArray[indexPath.row];
+    cell.indexPath = indexPath ;
+    
+    RSDHomeBuildingModel *model = self.dataArray[indexPath.row];
+    NSLog(@"楼盘ID---出现----%@",model.id);
+    
+    [[YYExposureInstance shareInstance] setExposureModel:self.dataArray[indexPath.row]];
+    
+    return cell;
 }
+
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.dataArray.count;
 }
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 197.f;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSLog(@"%@",[YYExposureInstance shareInstance].exposureArray);
+    
 }
 
 

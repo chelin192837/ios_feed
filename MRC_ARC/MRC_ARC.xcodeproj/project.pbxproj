@@ -15,6 +15,10 @@
 		62617F6121E8855E0061DD06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62617F6021E8855E0061DD06 /* main.m */; };
 		62617F6B21E8855E0061DD06 /* MRC_ARCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62617F6A21E8855E0061DD06 /* MRC_ARCTests.m */; };
 		62617F7621E8855E0061DD06 /* MRC_ARCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62617F7521E8855E0061DD06 /* MRC_ARCUITests.m */; };
+		62617F8621E891DC0061DD06 /* ARCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62617F8521E891DC0061DD06 /* ARCViewController.m */; };
+		62E0AE7721FEFB3300EBDFC7 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E0AE7621FEFB3300EBDFC7 /* Person.m */; };
+		62E0AE7A21FEFB4900EBDFC7 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E0AE7921FEFB4900EBDFC7 /* Student.m */; };
+		62F9127321EC58BA007A7225 /* NSArray+Object.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F9127221EC58BA007A7225 /* NSArray+Object.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,15 @@
 		62617F7121E8855E0061DD06 /* MRC_ARCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MRC_ARCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		62617F7521E8855E0061DD06 /* MRC_ARCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRC_ARCUITests.m; sourceTree = "<group>"; };
 		62617F7721E8855E0061DD06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62617F8421E891DC0061DD06 /* ARCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARCViewController.h; sourceTree = "<group>"; };
+		62617F8521E891DC0061DD06 /* ARCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARCViewController.m; sourceTree = "<group>"; };
+		62E0AE7521FEFB3300EBDFC7 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		62E0AE7621FEFB3300EBDFC7 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		62E0AE7821FEFB4900EBDFC7 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		62E0AE7921FEFB4900EBDFC7 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		62F9127121EC58BA007A7225 /* NSArray+Object.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Object.h"; sourceTree = "<group>"; };
+		62F9127221EC58BA007A7225 /* NSArray+Object.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Object.m"; sourceTree = "<group>"; };
+		62F9127521EC627A007A7225 /* NSString+Object.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Object.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +114,7 @@
 		62617F5021E8855C0061DD06 /* MRC_ARC */ = {
 			isa = PBXGroup;
 			children = (
+				62617F8321E891B90061DD06 /* ReferenceCount */,
 				62617F5121E8855C0061DD06 /* AppDelegate.h */,
 				62617F5221E8855C0061DD06 /* AppDelegate.m */,
 				62617F5421E8855C0061DD06 /* ViewController.h */,
@@ -130,6 +144,30 @@
 				62617F7721E8855E0061DD06 /* Info.plist */,
 			);
 			path = MRC_ARCUITests;
+			sourceTree = "<group>";
+		};
+		62617F8321E891B90061DD06 /* ReferenceCount */ = {
+			isa = PBXGroup;
+			children = (
+				62F9127021EC5893007A7225 /* Category */,
+				62617F8421E891DC0061DD06 /* ARCViewController.h */,
+				62617F8521E891DC0061DD06 /* ARCViewController.m */,
+			);
+			path = ReferenceCount;
+			sourceTree = "<group>";
+		};
+		62F9127021EC5893007A7225 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				62F9127121EC58BA007A7225 /* NSArray+Object.h */,
+				62F9127221EC58BA007A7225 /* NSArray+Object.m */,
+				62E0AE7521FEFB3300EBDFC7 /* Person.h */,
+				62E0AE7621FEFB3300EBDFC7 /* Person.m */,
+				62E0AE7821FEFB4900EBDFC7 /* Student.h */,
+				62E0AE7921FEFB4900EBDFC7 /* Student.m */,
+				62F9127521EC627A007A7225 /* NSString+Object.h */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +300,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62E0AE7721FEFB3300EBDFC7 /* Person.m in Sources */,
 				62617F5621E8855C0061DD06 /* ViewController.m in Sources */,
 				62617F6121E8855E0061DD06 /* main.m in Sources */,
 				62617F5321E8855C0061DD06 /* AppDelegate.m in Sources */,
+				62E0AE7A21FEFB4900EBDFC7 /* Student.m in Sources */,
+				62617F8621E891DC0061DD06 /* ARCViewController.m in Sources */,
+				62F9127321EC58BA007A7225 /* NSArray+Object.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +477,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q3B2QN7W4Q;
 				INFOPLIST_FILE = MRC_ARC/Info.plist;
@@ -452,6 +495,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q3B2QN7W4Q;
 				INFOPLIST_FILE = MRC_ARC/Info.plist;
