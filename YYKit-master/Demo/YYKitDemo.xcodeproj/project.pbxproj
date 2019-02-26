@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		623C07FB222505630049E853 /* YYRunLoopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 623C07FA222505630049E853 /* YYRunLoopVC.m */; };
+		623C07FE222506DE0049E853 /* HLThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 623C07FD222506DE0049E853 /* HLThread.m */; };
+		623C08012225290F0049E853 /* YYRunLoopTimerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 623C08002225290F0049E853 /* YYRunLoopTimerVC.m */; };
 		6248BB0A21CCB11600B56970 /* homeTuijiankehuBtn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6248BB0721CCB11600B56970 /* homeTuijiankehuBtn@3x.png */; };
 		6248BB0B21CCB11600B56970 /* homeTuijiankehuBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6248BB0821CCB11600B56970 /* homeTuijiankehuBtn@2x.png */; };
 		6248BB0C21CCB11600B56970 /* homeTuijiankehuBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 6248BB0921CCB11600B56970 /* homeTuijiankehuBtn.png */; };
@@ -341,6 +344,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		623C07F9222505630049E853 /* YYRunLoopVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYRunLoopVC.h; sourceTree = "<group>"; };
+		623C07FA222505630049E853 /* YYRunLoopVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYRunLoopVC.m; sourceTree = "<group>"; };
+		623C07FC222506DE0049E853 /* HLThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLThread.h; sourceTree = "<group>"; };
+		623C07FD222506DE0049E853 /* HLThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLThread.m; sourceTree = "<group>"; };
+		623C07FF2225290F0049E853 /* YYRunLoopTimerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYRunLoopTimerVC.h; sourceTree = "<group>"; };
+		623C08002225290F0049E853 /* YYRunLoopTimerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYRunLoopTimerVC.m; sourceTree = "<group>"; };
 		6248BB0721CCB11600B56970 /* homeTuijiankehuBtn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homeTuijiankehuBtn@3x.png"; sourceTree = "<group>"; };
 		6248BB0821CCB11600B56970 /* homeTuijiankehuBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homeTuijiankehuBtn@2x.png"; sourceTree = "<group>"; };
 		6248BB0921CCB11600B56970 /* homeTuijiankehuBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeTuijiankehuBtn.png; sourceTree = "<group>"; };
@@ -974,6 +983,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		623C07F8222505400049E853 /* RunLoop */ = {
+			isa = PBXGroup;
+			children = (
+				623C07F9222505630049E853 /* YYRunLoopVC.h */,
+				623C07FA222505630049E853 /* YYRunLoopVC.m */,
+				623C07FF2225290F0049E853 /* YYRunLoopTimerVC.h */,
+				623C08002225290F0049E853 /* YYRunLoopTimerVC.m */,
+				623C07FC222506DE0049E853 /* HLThread.h */,
+				623C07FD222506DE0049E853 /* HLThread.m */,
+			);
+			path = RunLoop;
+			sourceTree = "<group>";
+		};
 		6251D652221D56180040803E /* IQKeyboardManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -1641,6 +1663,7 @@
 		D9067E041B98A39200F346EB /* Feed List */ = {
 			isa = PBXGroup;
 			children = (
+				623C07F8222505400049E853 /* RunLoop */,
 				6262468B2216B73700033AB1 /* SDWebImageVC */,
 				D9067E051B98A3B200F346EB /* YYFeedListExample.h */,
 				D9067E061B98A3B200F346EB /* YYFeedListExample.m */,
@@ -2430,6 +2453,7 @@
 				D9B260951BEE79370038C00A /* YYAsyncLayer.m in Sources */,
 				D9B260691BEE79370038C00A /* UIScreen+YYAdd.m in Sources */,
 				626DB86E21C7B12A009386F7 /* MJRefreshBackStateFooter.m in Sources */,
+				623C08012225290F0049E853 /* YYRunLoopTimerVC.m in Sources */,
 				D9B2607F1BEE79370038C00A /* NSObject+YYModel.m in Sources */,
 				D9B2608E1BEE79370038C00A /* YYTextAttribute.m in Sources */,
 				626DB87721C7B12A009386F7 /* MJRefreshHeader.m in Sources */,
@@ -2471,6 +2495,7 @@
 				D9B260571BEE79370038C00A /* NSNumber+YYAdd.m in Sources */,
 				626DB86321C7B12A009386F7 /* AFURLRequestSerialization.m in Sources */,
 				626DB89221C8C4C7009386F7 /* BaseModel.m in Sources */,
+				623C07FB222505630049E853 /* YYRunLoopVC.m in Sources */,
 				D9B260641BEE79370038C00A /* UIControl+YYAdd.m in Sources */,
 				626DB87121C7B12A009386F7 /* MJRefreshAutoGifFooter.m in Sources */,
 				D9B260851BEE79370038C00A /* YYTextKeyboardManager.m in Sources */,
@@ -2616,6 +2641,7 @@
 				6251D618221CEC580040803E /* UIButton+RSDCount.m in Sources */,
 				626DB84D21C7B12A009386F7 /* JSONValueTransformer.m in Sources */,
 				D9B2606E1BEE79370038C00A /* YYCache.m in Sources */,
+				623C07FE222506DE0049E853 /* HLThread.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

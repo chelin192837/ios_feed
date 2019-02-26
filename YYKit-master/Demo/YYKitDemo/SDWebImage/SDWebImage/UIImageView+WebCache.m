@@ -47,7 +47,7 @@ static char TAG_ACTIVITY_SHOW;
     objc_setAssociatedObject(self, &imageURLKey, url, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 
     if (!(options & SDWebImageDelayPlaceholder)) {
-        //回到主线程;
+        //回到主线程;线程安全
         dispatch_main_async_safe(^{
             self.image = placeholder;
         });
