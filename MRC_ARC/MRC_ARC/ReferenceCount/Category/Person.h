@@ -7,10 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Book.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Person : NSObject
+{
+    Book * _book ;
+}
+
+@property(nonatomic,strong)NSString* name ;
+
+-(void)eat;
+
+-(void)setBook:(Book*)book;
+
+-(Book*)book;
 
 @end
 

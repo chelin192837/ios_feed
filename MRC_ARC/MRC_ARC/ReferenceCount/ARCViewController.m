@@ -10,6 +10,9 @@
 #import "NSArray+Object.h"
 #import "NSString+Object.h"
 //#import "<Messages/Messages.h>"
+#import "Person.h"
+#import "Book.h"
+#define MRCLog(x) NSLog(@"%ld",(long)[x retainCount]);
 
 @interface ARCViewController ()
 
@@ -28,7 +31,25 @@
   
 //    [self release];
     
-    [self function];
+//    [self function];
+    
+//    [self function_arc];
+    
+    [self fun_mulMemory];
+    
+}
+
+-(void)fun_mulMemory
+{
+    Book* b = [[Book alloc] init];
+    
+    Person * p = [[Person alloc] init];
+    
+    [p setBook:b];
+     
+    [b release];
+    
+    [p release];
     
 }
 
@@ -118,13 +139,74 @@
     
 }
 
+
+
 -(void)function_arc
 {
+    //自己生成的对象,自己持有 alloc,new
+    Person * p = [[Person alloc] init];
+    
+    //非自己生成的对象,自己也可以持有
+    Person * p1 = [p retain];
+        MRCLog(p)
+
+    //不再需要自己持有对象时,必须释放它
+    [p1 release];
+        MRCLog(p)
+    
+    [p release];
+    
+    [p release];
+
+    [p eat];
+    
+    p.name = @"chelin";
+    //非自己持有的对象无法释放
+    
+//    id __strong obj = [[NSObject alloc] init];
+    
+//    MRCLog(obj)
+
+//    __bridge_retained
+    
+//    id obj21 = __weak id obj;
+    
+//    MRCLog(obj21)
+
+    
+//    Person * p1 = p.copy ;
+    
+//    Person *p2 = [Person copyWithZone:<#(struct _NSZone *)#>];
     
     
+//    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+    
+//    Person * p = [[Person alloc] init];
+//    MRCLog(p)
+//
+//    Person * p2 = p;
+//    MRCLog(p2)
+//
+//    Person * p3 = p.copy;
+//    MRCLog(p3)
+//
+//    [p retain];
+//    MRCLog(p)
+//
+//    [p release];
+//    MRCLog(p)
+//
+//    [p autorelease];
+//    MRCLog(p)
+//
+//    [pool release];
+//
+//    MRCLog(p)
+
     
     
 }
+
 
 
 

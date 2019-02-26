@@ -12,15 +12,27 @@
 -(instancetype)init
 {
     if (self = [super init]) {
-        
-//        Student * student = [[Student alloc] init];
-        
-//        student.studentBlock = ^NSString * _Nonnull(NSString * _Nonnull str1, NSString * _Nonnull str2) {
-//
-//        };
-        
+  
     }
     return self;
+}
+-(void)setBook:(Book*)book
+{
+    _book = [book retain];
+}
+
+-(Book*)book
+{
+    return _book;
+}
+-(void)eat
+{
+    NSLog(@"吃饭");
+}
+-(void)dealloc{
+    [super dealloc];
+    [_book release];
+    NSLog(@"p ___死亡");
 }
 
 @end

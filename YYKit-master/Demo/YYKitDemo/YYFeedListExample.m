@@ -29,6 +29,7 @@
     [self addCell:@"Weibo" class:@"WBStatusTimelineViewController" image:@"Weibo.jpg"];
     [self addCell:@"YYKIt" class:@"YYDefineViewController" image:@"Weibo.jpg"];
     [self addCell:@"RSDRDiscover" class:@"RSDRDiscover" image:@"Weibo.jpg"];
+    [self addCell:@"SDWebImage" class:@"YYSDWebImageVC" image:@"Weibo.jpg"];
 
     if (!kiOS7Later) {
         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];

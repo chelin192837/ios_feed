@@ -16,6 +16,7 @@
 		62617F6B21E8855E0061DD06 /* MRC_ARCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62617F6A21E8855E0061DD06 /* MRC_ARCTests.m */; };
 		62617F7621E8855E0061DD06 /* MRC_ARCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62617F7521E8855E0061DD06 /* MRC_ARCUITests.m */; };
 		62617F8621E891DC0061DD06 /* ARCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62617F8521E891DC0061DD06 /* ARCViewController.m */; };
+		62624691221AEECA00033AB1 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 62624690221AEECA00033AB1 /* Book.m */; };
 		62E0AE7721FEFB3300EBDFC7 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E0AE7621FEFB3300EBDFC7 /* Person.m */; };
 		62E0AE7A21FEFB4900EBDFC7 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E0AE7921FEFB4900EBDFC7 /* Student.m */; };
 		62F9127321EC58BA007A7225 /* NSArray+Object.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F9127221EC58BA007A7225 /* NSArray+Object.m */; };
@@ -57,6 +58,8 @@
 		62617F7721E8855E0061DD06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62617F8421E891DC0061DD06 /* ARCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARCViewController.h; sourceTree = "<group>"; };
 		62617F8521E891DC0061DD06 /* ARCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARCViewController.m; sourceTree = "<group>"; };
+		6262468F221AEECA00033AB1 /* Book.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		62624690221AEECA00033AB1 /* Book.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
 		62E0AE7521FEFB3300EBDFC7 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		62E0AE7621FEFB3300EBDFC7 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		62E0AE7821FEFB4900EBDFC7 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
@@ -163,6 +166,8 @@
 				62F9127221EC58BA007A7225 /* NSArray+Object.m */,
 				62E0AE7521FEFB3300EBDFC7 /* Person.h */,
 				62E0AE7621FEFB3300EBDFC7 /* Person.m */,
+				6262468F221AEECA00033AB1 /* Book.h */,
+				62624690221AEECA00033AB1 /* Book.m */,
 				62E0AE7821FEFB4900EBDFC7 /* Student.h */,
 				62E0AE7921FEFB4900EBDFC7 /* Student.m */,
 				62F9127521EC627A007A7225 /* NSString+Object.h */,
@@ -304,6 +309,7 @@
 				62617F5621E8855C0061DD06 /* ViewController.m in Sources */,
 				62617F6121E8855E0061DD06 /* main.m in Sources */,
 				62617F5321E8855C0061DD06 /* AppDelegate.m in Sources */,
+				62624691221AEECA00033AB1 /* Book.m in Sources */,
 				62E0AE7A21FEFB4900EBDFC7 /* Student.m in Sources */,
 				62617F8621E891DC0061DD06 /* ARCViewController.m in Sources */,
 				62F9127321EC58BA007A7225 /* NSArray+Object.m in Sources */,
@@ -481,6 +487,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q3B2QN7W4Q;
 				INFOPLIST_FILE = MRC_ARC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -499,6 +506,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q3B2QN7W4Q;
 				INFOPLIST_FILE = MRC_ARC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

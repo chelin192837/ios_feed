@@ -9,6 +9,7 @@
 #import "YYAppDelegate.h"
 #import "YYRootViewController.h"
 #import "YYFPSLabel.h"
+#import "IQKeyboardManager.h"
 
 /// Fix the navigation bar height when hide status bar.
 @interface YYExampleNavBar : UINavigationBar
@@ -17,6 +18,32 @@
 
 @implementation YYExampleNavBar {
     CGSize _previousSize;
+}
+
+- (void)drawRect:(CGRect)rect {
+    [super drawRect:rect];
+    
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 11.0) {
+        for (UIView *view in self.subviews) { //_UINavigationBarContentView
+            for (UIView *subView in view.subviews) {
+              //_UIButtonBarStackView
+                if ([NSStringFromClass(subView.class) isEqualToString:@"_UIButtonBarStackView"]) {
+                    subView.frame = CGRectMake(0, subView.frame.origin.y, subView.frame.size.width, subView.frame.size.height);
+                    //_UIButtonBarButton
+                    if ([NSStringFromClass(subView.class) isEqualToString:@"_UIButtonBarButton"]) {
+                        subView.frame = CGRectMake(0, subView.frame.origin.y, subView.frame.size.width, subView.frame.size.height);
+                    }
+                }
+            }
+        }
+    }else{
+        for (int i=0; i<self.subviews.count; i++) {
+            UIView *t_view = self.subviews[i];
+            if (i==0) {
+                t_view.frame = CGRectMake(0, t_view.frame.origin.y, t_view.frame.size.width, t_view.frame.size.height);
+            }
+        }
+    }
 }
 
 - (CGSize)sizeThatFits:(CGSize)size {
@@ -49,6 +76,8 @@
 -(instancetype)initWithNavigationBarClass:(Class)navigationBarClass toolbarClass:(Class)toolbarClass
 {
     if (self = [super initWithNavigationBarClass:navigationBarClass toolbarClass:toolbarClass]) {
+        
+//        self.navigationBar = 
 //        NSLog(@"__zxy__11:12");
         _fpsLabel = [YYFPSLabel new];
         [_fpsLabel sizeToFit];
@@ -59,6 +88,8 @@
     }
     return self;
 }
+
+
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskPortrait;
@@ -100,6 +131,14 @@
     self.window.backgroundColor = [UIColor grayColor];
     
     [self.window makeKeyAndVisible];
+    
+    // 开始第三方键盘
+    [[IQKeyboardManager sharedManager] setEnable:YES];
+    
+    [IQKeyboardManager sharedManager].shouldToolbarUsesTextFieldTintColor = NO;
+    
+    // 点击屏幕隐藏键盘
+    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
     
     return YES;
 }
