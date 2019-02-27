@@ -10,6 +10,9 @@
 		623C07FB222505630049E853 /* YYRunLoopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 623C07FA222505630049E853 /* YYRunLoopVC.m */; };
 		623C07FE222506DE0049E853 /* HLThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 623C07FD222506DE0049E853 /* HLThread.m */; };
 		623C08012225290F0049E853 /* YYRunLoopTimerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 623C08002225290F0049E853 /* YYRunLoopTimerVC.m */; };
+		623C0804222628E10049E853 /* YYRunLoopImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 623C0803222628E10049E853 /* YYRunLoopImageVC.m */; };
+		623C08092226318A0049E853 /* spaceship.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 623C0807222631890049E853 /* spaceship.jpg */; };
+		623C080A2226318A0049E853 /* DWURunLoopWorkDistribution.m in Sources */ = {isa = PBXBuildFile; fileRef = 623C0808222631890049E853 /* DWURunLoopWorkDistribution.m */; };
 		6248BB0A21CCB11600B56970 /* homeTuijiankehuBtn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6248BB0721CCB11600B56970 /* homeTuijiankehuBtn@3x.png */; };
 		6248BB0B21CCB11600B56970 /* homeTuijiankehuBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6248BB0821CCB11600B56970 /* homeTuijiankehuBtn@2x.png */; };
 		6248BB0C21CCB11600B56970 /* homeTuijiankehuBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 6248BB0921CCB11600B56970 /* homeTuijiankehuBtn.png */; };
@@ -350,6 +353,11 @@
 		623C07FD222506DE0049E853 /* HLThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLThread.m; sourceTree = "<group>"; };
 		623C07FF2225290F0049E853 /* YYRunLoopTimerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYRunLoopTimerVC.h; sourceTree = "<group>"; };
 		623C08002225290F0049E853 /* YYRunLoopTimerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYRunLoopTimerVC.m; sourceTree = "<group>"; };
+		623C0802222628E10049E853 /* YYRunLoopImageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYRunLoopImageVC.h; sourceTree = "<group>"; };
+		623C0803222628E10049E853 /* YYRunLoopImageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYRunLoopImageVC.m; sourceTree = "<group>"; };
+		623C0806222631890049E853 /* DWURunLoopWorkDistribution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWURunLoopWorkDistribution.h; sourceTree = "<group>"; };
+		623C0807222631890049E853 /* spaceship.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = spaceship.jpg; sourceTree = "<group>"; };
+		623C0808222631890049E853 /* DWURunLoopWorkDistribution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWURunLoopWorkDistribution.m; sourceTree = "<group>"; };
 		6248BB0721CCB11600B56970 /* homeTuijiankehuBtn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homeTuijiankehuBtn@3x.png"; sourceTree = "<group>"; };
 		6248BB0821CCB11600B56970 /* homeTuijiankehuBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homeTuijiankehuBtn@2x.png"; sourceTree = "<group>"; };
 		6248BB0921CCB11600B56970 /* homeTuijiankehuBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeTuijiankehuBtn.png; sourceTree = "<group>"; };
@@ -986,14 +994,27 @@
 		623C07F8222505400049E853 /* RunLoop */ = {
 			isa = PBXGroup;
 			children = (
+				623C0805222631890049E853 /* DWURunLoopWorkDistribution */,
 				623C07F9222505630049E853 /* YYRunLoopVC.h */,
 				623C07FA222505630049E853 /* YYRunLoopVC.m */,
 				623C07FF2225290F0049E853 /* YYRunLoopTimerVC.h */,
 				623C08002225290F0049E853 /* YYRunLoopTimerVC.m */,
+				623C0802222628E10049E853 /* YYRunLoopImageVC.h */,
+				623C0803222628E10049E853 /* YYRunLoopImageVC.m */,
 				623C07FC222506DE0049E853 /* HLThread.h */,
 				623C07FD222506DE0049E853 /* HLThread.m */,
 			);
 			path = RunLoop;
+			sourceTree = "<group>";
+		};
+		623C0805222631890049E853 /* DWURunLoopWorkDistribution */ = {
+			isa = PBXGroup;
+			children = (
+				623C0807222631890049E853 /* spaceship.jpg */,
+				623C0806222631890049E853 /* DWURunLoopWorkDistribution.h */,
+				623C0808222631890049E853 /* DWURunLoopWorkDistribution.m */,
+			);
+			path = DWURunLoopWorkDistribution;
 			sourceTree = "<group>";
 		};
 		6251D652221D56180040803E /* IQKeyboardManager */ = {
@@ -2374,6 +2395,7 @@
 				D939F5E71B7CB052003EEC6A /* dribbble512_imageio.png in Resources */,
 				D9CC99F61B8B568B00A9466D /* mew_baseline.gif in Resources */,
 				D9CC99FA1B8B568B00A9466D /* mew_interlaced.png in Resources */,
+				623C08092226318A0049E853 /* spaceship.jpg in Resources */,
 				D98193311BC829F900BA0604 /* twitter_0.json in Resources */,
 				D9CC99F71B8B568B00A9466D /* mew_progressive.jpg in Resources */,
 				6291D02C21CA779F00DF212D /* picBuiliding@3x.png in Resources */,
@@ -2557,6 +2579,7 @@
 				626DB86121C7B12A009386F7 /* AFHTTPSessionManager.m in Sources */,
 				D933C1621B7799A10065CDBB /* YYImageDisplayExample.m in Sources */,
 				D95340A51BA47D6E004FDE84 /* YYTextUndoRedoExample.m in Sources */,
+				623C0804222628E10049E853 /* YYRunLoopImageVC.m in Sources */,
 				626DB86721C7B12A009386F7 /* UIScrollView+MJRefresh.m in Sources */,
 				D9B2609A1BEE79370038C00A /* YYReachability.m in Sources */,
 				D9067E071B98A3B200F346EB /* YYFeedListExample.m in Sources */,
@@ -2627,6 +2650,7 @@
 				D9B260561BEE79370038C00A /* NSNotificationCenter+YYAdd.m in Sources */,
 				D94C07D01B9ECD5F006299A2 /* WBStatusComposeViewController.m in Sources */,
 				D9B260541BEE79370038C00A /* NSDictionary+YYAdd.m in Sources */,
+				623C080A2226318A0049E853 /* DWURunLoopWorkDistribution.m in Sources */,
 				D9B260811BEE79370038C00A /* YYTextContainerView.m in Sources */,
 				62A5D82721BE0E4E0061D7BD /* YYNetWorkingVC.m in Sources */,
 				626DB85121C7B12A009386F7 /* JSONModelClassProperty.m in Sources */,

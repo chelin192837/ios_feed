@@ -104,4 +104,10 @@ static int count ;
     NSLog(@"[NSRunLoop currentRunLoop].mode -- %@",[NSRunLoop currentRunLoop].currentMode);
     
 }
+
+
+-(void)dealloc
+{
+    [self.timer invalidate];
+}
 @end
