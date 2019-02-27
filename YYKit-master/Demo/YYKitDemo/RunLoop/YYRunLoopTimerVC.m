@@ -50,7 +50,7 @@ static int count ;
 -(void)timeClick
 {
     count ++ ;
-    NSLog(@"count__%d",count);
+//    NSLog(@"count__%d",count);
     [self.kTableView reloadData];
 }
 -(UITableView*)kTableView
@@ -62,7 +62,7 @@ static int count ;
     }
     return _kTableView;
 }
-#pragma mark --- RunLoop 让Timer正常运转
+#pragma mark --- RunLoop应用场景(二):RunLoop 让Timer正常运转
 /*
  
 然后，我们在滑动tableView的时候timerUpdate方法，并不会调用。
@@ -101,7 +101,7 @@ static int count ;
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
-    NSLog(@"[NSRunLoop currentRunLoop].mode -- %@",[NSRunLoop currentRunLoop].currentMode);
+//    NSLog(@"[NSRunLoop currentRunLoop].mode -- %@",[NSRunLoop currentRunLoop].currentMode);
     
 }
 

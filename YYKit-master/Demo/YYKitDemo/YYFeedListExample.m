@@ -31,8 +31,10 @@
     [self addCell:@"RSDRDiscover" class:@"RSDRDiscover" image:@"Weibo.jpg"];
     [self addCell:@"SDWebImage" class:@"YYSDWebImageVC" image:@"Weibo.jpg"];
     [self addCell:@"RunLoop" class:@"YYRunLoopVC" image:@"Weibo.jpg"];
+    
     [self addCell:@"YYRunLoopTimerVC" class:@"YYRunLoopTimerVC" image:@"Weibo.jpg"];
     [self addCell:@"YYRunLoopImageVC" class:@"YYRunLoopImageVC" image:@"Weibo.jpg"];
+    [self addCell:@"YYRunLoopCrachVC" class:@"YYRunLoopCrachVC" image:@"Weibo.jpg"];
 
     if (!kiOS7Later) {
         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];

@@ -33,7 +33,7 @@
     [self performSelector:@selector(opention) onThread:self.thread withObject:nil waitUntilDone:NO];
 }
 
-#pragma mark-- RunLoop保证线程的长时间存活
+#pragma mark-- RunLoop应用场景(一):RunLoop保证线程的长时间存活
 /*
     1,ios当子线程中的任务执行完毕后，子线程就会被销毁掉。
     2,如果程序中，需要经常在子线程中执行任务，频繁的创建和销毁线程，会造成资源的浪费。这时候我们就可以使用RunLoop来让该线程长时间存活而不被销毁

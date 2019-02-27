@@ -10,6 +10,7 @@
 #import "YYRootViewController.h"
 #import "YYFPSLabel.h"
 #import "IQKeyboardManager.h"
+#import "CrashHandler.h"
 
 /// Fix the navigation bar height when hide status bar.
 @interface YYExampleNavBar : UINavigationBar
@@ -114,6 +115,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [CrashHandler sharedInstance];
+
     YYRootViewController *root = [YYRootViewController new];
     
     YYExampleNavController *nav = [[YYExampleNavController alloc] initWithNavigationBarClass:[YYExampleNavBar class] toolbarClass:[UIToolbar class]];

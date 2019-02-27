@@ -65,41 +65,84 @@
         make.width.height.equalTo(@200);
     }];
     
-//    UITextField * textField = [[UITextField alloc] init];
-//    textField.backgroundColor = [UIColor whiteColor];
-//    textField.delegate = self ;
-//    textField.placeholder=@"手机号";
-//    textField.keyboardType = UIKeyboardTypeNumberPad ;
-//    [self.view addSubview:textField];
-//    textField.borderStyle = UITextBorderStyleRoundedRect;
-//    [textField mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.bottom.equalTo(imageView.mas_top).offset(-30);
-//        make.width.equalTo(@200);
-//        make.height.equalTo(@50);
-//        make.centerX.equalTo(self.view);
-//    }];
+    UITextField * textField = [[UITextField alloc] init];
+    textField.backgroundColor = [UIColor whiteColor];
+    textField.delegate = self ;
+    textField.placeholder=@"手机号";
+    textField.keyboardType = UIKeyboardTypeNumberPad ;
+    [self.view addSubview:textField];
+    textField.borderStyle = UITextBorderStyleRoundedRect;
+    [textField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(imageView.mas_top).offset(-30);
+        make.width.equalTo(@200);
+        make.height.equalTo(@50);
+        make.centerX.equalTo(self.view);
+    }];
+
+    UIButton * centerBtn = [[UIButton alloc] init];
+    [centerBtn setTitle:@"点击" forState:UIControlStateNormal];
+    [centerBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [centerBtn addTarget:self action:@selector(centerBtn) forControlEvents:UIControlEventTouchUpInside];
+    centerBtn.backgroundColor = [UIColor yellowColor];
+    [imageView addSubview:centerBtn];
+    [centerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(imageView);
+        make.bottom.equalTo(imageView.mas_bottom).offset(0);
+        make.width.height.equalTo(@50);
+    }];
     
-//
-//    UIButton * centerBtn = [[UIButton alloc] init];
-//    [centerBtn setTitle:@"点击" forState:UIControlStateNormal];
-//    [centerBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//    [centerBtn addTarget:self action:@selector(centerBtn) forControlEvents:UIControlEventTouchUpInside];
-//    centerBtn.backgroundColor = [UIColor yellowColor];
-//    [imageView addSubview:centerBtn];
-//    [centerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.centerX.equalTo(imageView);
-//        make.bottom.equalTo(imageView.mas_bottom).offset(0);
-//        make.width.height.equalTo(@50);
-//    }];
-//
-//    [centerBtn setEnlargeEdge:100];
+    UIButton * leftBtn = [[UIButton alloc] init];
+    [leftBtn setTitle:@"左点击" forState:UIControlStateNormal];
+    [leftBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [leftBtn addTarget:self action:@selector(leftBtn) forControlEvents:UIControlEventTouchUpInside];
+    leftBtn.backgroundColor = [UIColor yellowColor];
+    [self.view addSubview:leftBtn];
+    [leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(centerBtn.mas_left).offset(-100);
+        make.bottom.equalTo(imageView.mas_bottom).offset(0);
+        make.width.height.equalTo(@80);
+    }];
     
-//    [self setNav];
+    UIButton * rightBtn = [[UIButton alloc] init];
+    [rightBtn setTitle:@"右点击" forState:UIControlStateNormal];
+    [rightBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [rightBtn addTarget:self action:@selector(rightBtn) forControlEvents:UIControlEventTouchUpInside];
+    rightBtn.backgroundColor = [UIColor yellowColor];
+    [self.view addSubview:rightBtn];
+    [rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(centerBtn.mas_right).offset(50);
+        make.bottom.equalTo(imageView.mas_bottom).offset(0);
+        make.width.height.equalTo(@80);
+    }];
+    
+
+    [centerBtn setEnlargeEdge:100];
+    
+    [self setNav];
 
 }
+
+
 -(void)centerBtn
 {
     NSLog(@"centerBtn");
+}
+
+
+-(void)leftBtn
+{
+    NSLog(@"leftBtn");
+}
+
+
+-(void)rightBtn
+{
+    NSLog(@"rightBtn");
+    
+    NSArray * arr = [NSArray array];
+    
+    NSLog(@"---%@",arr[0]);
+    
 }
 -(void)setNav
 {

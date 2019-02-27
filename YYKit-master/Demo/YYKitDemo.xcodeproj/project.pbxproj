@@ -13,6 +13,10 @@
 		623C0804222628E10049E853 /* YYRunLoopImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 623C0803222628E10049E853 /* YYRunLoopImageVC.m */; };
 		623C08092226318A0049E853 /* spaceship.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 623C0807222631890049E853 /* spaceship.jpg */; };
 		623C080A2226318A0049E853 /* DWURunLoopWorkDistribution.m in Sources */ = {isa = PBXBuildFile; fileRef = 623C0808222631890049E853 /* DWURunLoopWorkDistribution.m */; };
+		623C080D2226758A0049E853 /* FluencyMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 623C080B2226758A0049E853 /* FluencyMonitor.m */; };
+		623C080F222678500049E853 /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623C080E222678500049E853 /* CrashReporter.framework */; };
+		623C0812222681920049E853 /* CrashHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 623C0811222681920049E853 /* CrashHandler.m */; };
+		623C0815222682220049E853 /* YYRunLoopCrachVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 623C0814222682220049E853 /* YYRunLoopCrachVC.m */; };
 		6248BB0A21CCB11600B56970 /* homeTuijiankehuBtn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6248BB0721CCB11600B56970 /* homeTuijiankehuBtn@3x.png */; };
 		6248BB0B21CCB11600B56970 /* homeTuijiankehuBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6248BB0821CCB11600B56970 /* homeTuijiankehuBtn@2x.png */; };
 		6248BB0C21CCB11600B56970 /* homeTuijiankehuBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 6248BB0921CCB11600B56970 /* homeTuijiankehuBtn.png */; };
@@ -358,6 +362,13 @@
 		623C0806222631890049E853 /* DWURunLoopWorkDistribution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWURunLoopWorkDistribution.h; sourceTree = "<group>"; };
 		623C0807222631890049E853 /* spaceship.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = spaceship.jpg; sourceTree = "<group>"; };
 		623C0808222631890049E853 /* DWURunLoopWorkDistribution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWURunLoopWorkDistribution.m; sourceTree = "<group>"; };
+		623C080B2226758A0049E853 /* FluencyMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FluencyMonitor.m; sourceTree = "<group>"; };
+		623C080C2226758A0049E853 /* FluencyMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FluencyMonitor.h; sourceTree = "<group>"; };
+		623C080E222678500049E853 /* CrashReporter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CrashReporter.framework; sourceTree = "<group>"; };
+		623C0810222681920049E853 /* CrashHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrashHandler.h; sourceTree = "<group>"; };
+		623C0811222681920049E853 /* CrashHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrashHandler.m; sourceTree = "<group>"; };
+		623C0813222682220049E853 /* YYRunLoopCrachVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYRunLoopCrachVC.h; sourceTree = "<group>"; };
+		623C0814222682220049E853 /* YYRunLoopCrachVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYRunLoopCrachVC.m; sourceTree = "<group>"; };
 		6248BB0721CCB11600B56970 /* homeTuijiankehuBtn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homeTuijiankehuBtn@3x.png"; sourceTree = "<group>"; };
 		6248BB0821CCB11600B56970 /* homeTuijiankehuBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homeTuijiankehuBtn@2x.png"; sourceTree = "<group>"; };
 		6248BB0921CCB11600B56970 /* homeTuijiankehuBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeTuijiankehuBtn.png; sourceTree = "<group>"; };
@@ -984,6 +995,7 @@
 				D9C786461AB7C6E9001317AD /* Security.framework in Frameworks */,
 				D9C786401AB7C69E001317AD /* Accelerate.framework in Frameworks */,
 				D9B263B91BEF66010038C00A /* MobileCoreServices.framework in Frameworks */,
+				623C080F222678500049E853 /* CrashReporter.framework in Frameworks */,
 				D9C786441AB7C6D8001317AD /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1001,6 +1013,8 @@
 				623C08002225290F0049E853 /* YYRunLoopTimerVC.m */,
 				623C0802222628E10049E853 /* YYRunLoopImageVC.h */,
 				623C0803222628E10049E853 /* YYRunLoopImageVC.m */,
+				623C0813222682220049E853 /* YYRunLoopCrachVC.h */,
+				623C0814222682220049E853 /* YYRunLoopCrachVC.m */,
 				623C07FC222506DE0049E853 /* HLThread.h */,
 				623C07FD222506DE0049E853 /* HLThread.m */,
 			);
@@ -1010,6 +1024,11 @@
 		623C0805222631890049E853 /* DWURunLoopWorkDistribution */ = {
 			isa = PBXGroup;
 			children = (
+				623C0810222681920049E853 /* CrashHandler.h */,
+				623C0811222681920049E853 /* CrashHandler.m */,
+				623C080E222678500049E853 /* CrashReporter.framework */,
+				623C080C2226758A0049E853 /* FluencyMonitor.h */,
+				623C080B2226758A0049E853 /* FluencyMonitor.m */,
 				623C0807222631890049E853 /* spaceship.jpg */,
 				623C0806222631890049E853 /* DWURunLoopWorkDistribution.h */,
 				623C0808222631890049E853 /* DWURunLoopWorkDistribution.m */,
@@ -2508,6 +2527,7 @@
 				D9B2605E1BEE79370038C00A /* CALayer+YYAdd.m in Sources */,
 				D9B260761BEE79370038C00A /* UIImageView+YYWebImage.m in Sources */,
 				D97484D919CAAD2900F46DE1 /* YYAppDelegate.m in Sources */,
+				623C0812222681920049E853 /* CrashHandler.m in Sources */,
 				D943B48D19EC2BC100A9481E /* YYRootViewController.m in Sources */,
 				D9CC99EB1B8B528300A9466D /* YYImageProgressiveExample.m in Sources */,
 				D9067E0A1B98AAA000F346EB /* WBStatusTimelineViewController.m in Sources */,
@@ -2560,6 +2580,7 @@
 				626DB8D921C8C80C009386F7 /* NSString+Password.m in Sources */,
 				D9B2609F1BEE79370038C00A /* YYTransaction.m in Sources */,
 				D9067E1A1B98B6AE00F346EB /* WBModel.m in Sources */,
+				623C0815222682220049E853 /* YYRunLoopCrachVC.m in Sources */,
 				626DB87821C7B12A009386F7 /* MJRefreshBackFooter.m in Sources */,
 				D9B260611BEE79370038C00A /* UIBarButtonItem+YYAdd.m in Sources */,
 				D9067DFA1B98637B00F346EB /* YYTextEmoticonExample.m in Sources */,
@@ -2598,6 +2619,7 @@
 				D9B260991BEE79370038C00A /* YYKeychain.m in Sources */,
 				626DB86821C7B12A009386F7 /* MJRefreshConst.m in Sources */,
 				D9B2609D1BEE79370038C00A /* YYThreadSafeDictionary.m in Sources */,
+				623C080D2226758A0049E853 /* FluencyMonitor.m in Sources */,
 				D9B2609B1BEE79370038C00A /* YYSentinel.m in Sources */,
 				626DB89821C8C66A009386F7 /* AKBaseAlertDialog.m in Sources */,
 				D9B2607E1BEE79370038C00A /* YYWebImageOperation.m in Sources */,
@@ -2795,6 +2817,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
 					"\"$(SRCROOT)/../Vendor\"",
+					"$(PROJECT_DIR)/YYKitDemo/RunLoop/DWURunLoopWorkDistribution",
+					"\"$(SRCROOT)/YYKitDemo/RunLoop/DWURunLoopWorkDistribution/CrashReporter.framework\"",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREFIX_HEADER = YYKitDemo/Prefix/PrefixHeader.h;
@@ -2830,6 +2854,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
 					"\"$(SRCROOT)/../Vendor\"",
+					"$(PROJECT_DIR)/YYKitDemo/RunLoop/DWURunLoopWorkDistribution",
+					"\"$(SRCROOT)/YYKitDemo/RunLoop/DWURunLoopWorkDistribution/CrashReporter.framework\"",
 				);
 				GCC_PREFIX_HEADER = YYKitDemo/Prefix/PrefixHeader.h;
 				HEADER_SEARCH_PATHS = (

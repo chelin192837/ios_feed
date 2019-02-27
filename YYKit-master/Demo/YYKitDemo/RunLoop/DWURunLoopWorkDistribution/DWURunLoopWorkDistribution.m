@@ -39,6 +39,8 @@
 
 - (void)_timerFiredMethod:(NSTimer *)timer {
     //We do nothing here
+    
+    
 }
 
 - (instancetype)init
@@ -65,7 +67,8 @@
 // 注册observer ;
 + (void)_registerRunLoopWorkDistributionAsMainRunloopObserver:(DWURunLoopWorkDistribution *)runLoopWorkDistribution {
     static CFRunLoopObserverRef defaultModeObserver;
-    _registerObserver(kCFRunLoopBeforeWaiting, defaultModeObserver, NSIntegerMax - 999, kCFRunLoopDefaultMode, (__bridge void *)runLoopWorkDistribution, &_defaultModeRunLoopWorkDistributionCallback);
+    
+    _registerObserver(kCFRunLoopAllActivities, defaultModeObserver, NSIntegerMax - 999, kCFRunLoopDefaultMode, (__bridge void *)runLoopWorkDistribution, &_defaultModeRunLoopWorkDistributionCallback);
 }
 
 static void _registerObserver(CFOptionFlags activities, CFRunLoopObserverRef observer, CFIndex order, CFStringRef mode, void *info, CFRunLoopObserverCallBack callback) {
@@ -89,23 +92,43 @@ static void _registerObserver(CFOptionFlags activities, CFRunLoopObserverRef obs
 
 // 当RunLoop处于kCFRunLoopBeforeWaiting状态时,发生回掉 ;
 
-// 主线程所有RunLoop任务都是在CFRunLoopActivity的kCFRunLoopBeforeSources和kCFRunLoopBeforeWaiting中进行的
 
 static void _runLoopWorkDistributionCallback(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void *info)
 {
-    
-    NSLog(@"observer---%@",observer);
-    
-    DWURunLoopWorkDistribution *runLoopWorkDistribution = (__bridge DWURunLoopWorkDistribution *)info;
-    if (runLoopWorkDistribution.tasks.count == 0) { //如果任务数目为0,不发生任何操作;
-        return;
-    }
-    BOOL result = NO;
-    while (result == NO && runLoopWorkDistribution.tasks.count) {
-        DWURunLoopWorkDistributionUnit unit  = runLoopWorkDistribution.tasks.firstObject;
-        result = unit();
-        [runLoopWorkDistribution.tasks removeObjectAtIndex:0];
-        [runLoopWorkDistribution.tasksKeys removeObjectAtIndex:0];
+    switch (activity) {
+        case kCFRunLoopEntry:
+//            NSLog(@"kCFRunLoopEntry");
+            break;
+        case kCFRunLoopBeforeTimers:
+//            NSLog(@"kCFRunLoopBeforeTimers");
+            break;
+        case kCFRunLoopBeforeSources:
+//            NSLog(@"kCFRunLoopBeforeSources");
+            break;
+        case kCFRunLoopBeforeWaiting:
+        {
+//            NSLog(@"kCFRunLoopBeforeWaiting");
+            DWURunLoopWorkDistribution *runLoopWorkDistribution = (__bridge DWURunLoopWorkDistribution *)info;
+            if (runLoopWorkDistribution.tasks.count == 0) { //如果任务数目为0,不发生任何操作;
+                return;
+            }
+            BOOL result = NO;
+            while (result == NO && runLoopWorkDistribution.tasks.count) {
+                DWURunLoopWorkDistributionUnit unit  = runLoopWorkDistribution.tasks.firstObject;
+                result = unit();
+                [runLoopWorkDistribution.tasks removeObjectAtIndex:0];
+                [runLoopWorkDistribution.tasksKeys removeObjectAtIndex:0];
+            }
+        }
+            break;
+        case kCFRunLoopAfterWaiting:
+//            NSLog(@"kCFRunLoopAfterWaiting");
+            break;
+        case kCFRunLoopExit:
+//            NSLog(@"kCFRunLoopExit");
+            break;
+        default:
+            break;
     }
 }
 

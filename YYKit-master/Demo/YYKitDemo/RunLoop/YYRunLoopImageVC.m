@@ -7,8 +7,10 @@
 //
 
 #import "YYRunLoopImageVC.h"
-
+#import "FluencyMonitor.h"
 #import "DWURunLoopWorkDistribution.h"
+
+#define TimeSpace 0.3f
 
 static NSString *IDENTIFIER = @"IDENTIFIER";
 
@@ -46,7 +48,7 @@ static CGFloat CELL_HEIGHT = 135.f;
     UIImage *image = [UIImage imageWithContentsOfFile:path];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.image = image;
-    [UIView transitionWithView:cell.contentView duration:0.3 options:UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionTransitionCrossDissolve animations:^{
+    [UIView transitionWithView:cell.contentView duration:TimeSpace options:UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionTransitionCrossDissolve animations:^{
         [cell.contentView addSubview:imageView];
     } completion:^(BOOL finished) {
     }];
@@ -59,7 +61,7 @@ static CGFloat CELL_HEIGHT = 135.f;
     UIImage *image = [UIImage imageWithContentsOfFile:path];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.image = image;
-    [UIView transitionWithView:cell.contentView duration:0.3 options:UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionTransitionCrossDissolve animations:^{
+    [UIView transitionWithView:cell.contentView duration:TimeSpace options:UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionTransitionCrossDissolve animations:^{
         [cell.contentView addSubview:imageView];
     } completion:^(BOOL finished) {
     }];
@@ -82,7 +84,7 @@ static CGFloat CELL_HEIGHT = 135.f;
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.image = image;
     
-    [UIView transitionWithView:cell.contentView duration:0.3 options:UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionTransitionCrossDissolve animations:^{
+    [UIView transitionWithView:cell.contentView duration:TimeSpace options:UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionTransitionCrossDissolve animations:^{
         [cell.contentView addSubview:label];
         [cell.contentView addSubview:imageView];
     } completion:^(BOOL finished) {
@@ -94,16 +96,23 @@ static CGFloat CELL_HEIGHT = 135.f;
     return 100;
 }
 
-#pragma mark--当RunLoop处于
+#pragma mark-- RunLoop应用场景(三):当RunLoop处于NSDefaultRunLoopMode模式下kCFRunLoopBeforeWaiting渲染页面;
+
 /*
- // 当RunLoop处于kCFRunLoopBeforeWaiting状态时,发生回掉, 执行[YYRunLoopImageVC task_2:cell indexPath:indexPath];
- 进行图片加载和页面渲染;总
-
-
  
- // 主线程所有RunLoop滚动任务都是在CFRunLoopActivity的kCFRunLoopBeforeSources和kCFRunLoopBeforeWaiting中进行的
+ //让UITableView、UICollectionView等延迟加载图片
  
+ // 当RunLoop处于defalut模式时,发生回掉, 执行[YYRunLoopImageVC task_2:cell indexPath:indexPath];
+ 进行图片加载和页面渲染;
+ 
+ 一次RunLoop循环:BeforeWaiting->BeforeSource->BeforeWaiting
+ 
+ 利用RunLoop进行延迟加载图片本质上是利用主线程在页面滚动的时候 RunLoop的模式切换到Traking模式,而这个时候我们设置图片加载的模式是defalut模式下的BeforeWaiting状态,所以在滚动的时候不会加载图片;
+ 
+[imageView3 performSelectorOnMainThread:@selector(setImage:) withObject:image3 waitUntilDone:NO modes:@[NSDefaultRunLoopMode]];
+
  */
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:IDENTIFIER];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -112,12 +121,7 @@ static CGFloat CELL_HEIGHT = 135.f;
     [YYRunLoopImageVC task_5:cell indexPath:indexPath]; // 移除所有视图;
    
     [YYRunLoopImageVC task_1:cell indexPath:indexPath];
-//
-//    [YYRunLoopImageVC task_2:cell indexPath:indexPath];
-//
-//    [YYRunLoopImageVC task_3:cell indexPath:indexPath];
-//
-//    [YYRunLoopImageVC task_4:cell indexPath:indexPath];
+    
 
     [[DWURunLoopWorkDistribution sharedRunLoopWorkDistribution] addTask:^BOOL(void) {
         if (![cell.currentIndexPath isEqual:indexPath]) {
@@ -170,11 +174,26 @@ static CGFloat CELL_HEIGHT = 135.f;
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self.exampleTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:IDENTIFIER];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(stopMonitor)];
+    
+    [[FluencyMonitor shareMonitor] start];
+
 }
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    NSLog(@"RunLoop--%@",[NSRunLoop currentRunLoop].currentMode);
+//    NSLog(@"RunLoop--%@",[NSRunLoop currentRunLoop].currentMode);
 //    [NSRunLoop currentRunLoop];
 }
+
+#pragma mark-- RunLoop应用场景(四):用分线程来监控主线程的耗时操作;主要测试从BeforeSource到BeforeWaiting之间的时间;
+
+- (void)stopMonitor
+{
+    [[FluencyMonitor shareMonitor] stop];
+}
+
+
+
 
 @end
