@@ -186,8 +186,10 @@ static CGFloat CELL_HEIGHT = 135.f;
 //    [NSRunLoop currentRunLoop];
 }
 
-#pragma mark-- RunLoop应用场景(四):用分线程来监控主线程的耗时操作;主要测试从BeforeSource到BeforeWaiting之间的时间;
-
+#pragma mark-- RunLoop应用场景(四):用分线程来监控主线程的耗时操作;
+/*
+ 主要测试从BeforeSource到BeforeWaiting之间的时间;
+*/
 - (void)stopMonitor
 {
     [[FluencyMonitor shareMonitor] stop];

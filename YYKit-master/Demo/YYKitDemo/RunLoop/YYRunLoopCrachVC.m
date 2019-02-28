@@ -23,11 +23,16 @@
 }
 
 #pragma mark-- RunLoop应用场景(五): RunLoop Crash处理
-
 /*
- 
  我们在HandleException回调函数中，可以获取到当前的RunLoop，然后获取该RunLoop中的所有Mode，手动运行一遍;
- 
+ CFRunLoopRef runLoop = CFRunLoopGetCurrent();
+ CFArrayRef allModes = CFRunLoopCopyAllModes(runLoop);
+ while (!ignore) {
+ for (NSString *mode in (__bridge NSArray *)allModes) {
+ CFRunLoopRunInMode((CFStringRef)mode, 0.001, false);
+ }
+ NSLog(@"ignoreignoreignoreignoreignore");
+ }
  */
 
 //-(void)touch
