@@ -121,13 +121,21 @@
                                     <constraint firstAttribute="width" constant="6" id="Fnw-YM-DHI"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="完成" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rem-u7-GWQ">
+                                <rect key="frame" x="363" y="82" width="35" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="DAQ-KF-JPf" secondAttribute="trailing" constant="14" id="2J4-m1-Swt"/>
                             <constraint firstItem="qT8-0Z-MVa" firstAttribute="top" secondItem="vV2-Pc-Wqe" secondAttribute="bottom" id="6tr-cE-JFf"/>
+                            <constraint firstAttribute="trailing" secondItem="rem-u7-GWQ" secondAttribute="trailing" constant="14" id="C2e-Xd-H30"/>
                             <constraint firstItem="Wel-0A-bxj" firstAttribute="leading" secondItem="8Yw-GY-ZsM" secondAttribute="leading" constant="19" id="Cbp-zx-I5s"/>
                             <constraint firstItem="Wel-0A-bxj" firstAttribute="bottom" secondItem="7JA-fn-mBW" secondAttribute="bottom" constant="-4" id="D2O-Co-4d9"/>
+                            <constraint firstItem="rem-u7-GWQ" firstAttribute="top" secondItem="DAQ-KF-JPf" secondAttribute="bottom" constant="20" id="FBu-eb-qyw"/>
                             <constraint firstItem="ckB-eH-ITQ" firstAttribute="leading" secondItem="oet-04-Psb" secondAttribute="trailing" constant="10" id="HWi-uB-Q4v"/>
                             <constraint firstItem="oet-04-Psb" firstAttribute="leading" secondItem="8Yw-GY-ZsM" secondAttribute="leading" constant="14" id="JGr-So-kUm"/>
                             <constraint firstItem="tfP-b0-TNJ" firstAttribute="leading" secondItem="ckB-eH-ITQ" secondAttribute="leading" id="JIS-Rv-RgE"/>
@@ -370,6 +378,7 @@
                 <outlet property="btn_location" destination="7JA-fn-mBW" id="729-ab-c5K"/>
                 <outlet property="buildingImage" destination="oet-04-Psb" id="ZSv-ZW-Xvu"/>
                 <outlet property="buildingNameLabel" destination="ckB-eH-ITQ" id="Tyq-Cf-Xoq"/>
+                <outlet property="cellRow" destination="rem-u7-GWQ" id="UOb-nd-my0"/>
                 <outlet property="centerView" destination="w5o-ac-7kh" id="h6O-nL-bLP"/>
                 <outlet property="collectBtn" destination="Pqj-mW-JYJ" id="ddF-4s-RSo"/>
                 <outlet property="commissionLabel" destination="vV2-Pc-Wqe" id="PbI-ea-Wps"/>

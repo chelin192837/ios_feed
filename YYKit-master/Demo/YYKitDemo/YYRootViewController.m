@@ -28,8 +28,38 @@
     [self addCell:@"Feed List Demo" class:@"YYFeedListExample"];
     [self.tableView reloadData];
     
+//    NSArray* arr = @[@"chelin",@"liuying",@"zhongguoyuang"];
+    
+//    [arr objectAtIndex:5];
+    
+
+
     //[self log];
 }
+//// in your .h or inside a class extension
+//@property(nonatomic,strong)NSDateFormatter*formatter;
+//// inside the implementation (.m)
+//// When you need, just use self.formatter
+//- (NSDateFormatter*)formatter {
+//    if(!_formatter) {
+//        _formatter = [[NSDateFormatter alloc] init];
+//        _formatter.dateFormat =@"EEE MMM dd HH:mm:ss Z yyyy";
+//        // twitter date format
+//    }
+//    return_formatter;
+//    }
+
+
++ (NSMutableURLRequest*)imageRequestWithURL:(NSURL*)url {
+    NSMutableURLRequest*request = [NSMutableURLRequest requestWithURL:url];
+    request.cachePolicy = NSURLRequestReturnCacheDataElseLoad;//this will make sure the request always returns the cachedimage
+    request.HTTPShouldHandleCookies =NO;
+    request.HTTPShouldUsePipelining =YES;
+    [request addValue:@"image/*"forHTTPHeaderField:@"Accept"];
+    
+    return request;
+}
+
 
 - (void)log {
     printf("all:%.2f MB   used:%.2f MB   free:%.2f MB   active:%.2f MB  inactive:%.2f MB  wird:%.2f MB  purgable:%.2f MB\n",

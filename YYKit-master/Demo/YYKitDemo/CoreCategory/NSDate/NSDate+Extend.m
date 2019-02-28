@@ -149,10 +149,6 @@
 
 
 
-
-
-
-
 /**
  *  两个时间比较
  *
@@ -174,6 +170,47 @@
 }
 
 
+/*
+ *
+ *获取指定时间距离现在的秒数
+ *
+ */
+-(NSInteger)secondDate:(NSString*)date
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
+    NSDate *datestr = [dateFormatter dateFromString:date];
+    float different = [self timeIntervalSinceDate:datestr];
+    
+//    int minute = (int)(different/60);
+    int second = (int)different;
+    
+    return second;
+}
+
+//时间转时间戳
++(NSString *)dateConversionTimeStamp:(NSDate *)date
+{
+    NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[date timeIntervalSince1970]*1000];
+    return timeSp;
+}
+
+//字符串转时间
++(NSDate *)nsstringConversionNSDate:(NSString *)dateStr
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
+    NSDate *datestr = [dateFormatter dateFromString:dateStr];
+    return datestr;
+}
+//时间转字符串
+-(NSString*)NSDateConversionNSString
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
+    NSString * str = [dateFormatter stringFromDate:self];
+    return str ;
+}
 
 
 

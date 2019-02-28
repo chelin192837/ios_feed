@@ -28,6 +28,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *btn_location;
 @property (weak, nonatomic) IBOutlet UIImageView *icon_location;
 
-
+//@property (nonatomic,assign) NSIndexPath* indexPath ;
 
 @end
