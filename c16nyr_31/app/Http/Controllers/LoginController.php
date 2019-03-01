@@ -24,6 +24,9 @@ class LoginController extends Controller
         ]);
 
         $user = request(['email', 'password']);
+
+        dd(88);
+
         $remember = boolval(request('is_remember'));
         if (true == \Auth::attempt($user, $remember)) {
            return redirect('/posts');
