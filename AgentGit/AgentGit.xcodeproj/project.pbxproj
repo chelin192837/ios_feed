@@ -15,6 +15,7 @@
 		62F9E26A222E77F200A0035D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F9E269222E77F200A0035D /* main.m */; };
 		62F9E274222E77F200A0035D /* AgentGitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F9E273222E77F200A0035D /* AgentGitTests.m */; };
 		62F9E27F222E77F200A0035D /* AgentGitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F9E27E222E77F200A0035D /* AgentGitUITests.m */; };
+		62F9E28E222E78C200A0035D /* YYSingleOBC.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F9E28D222E78C200A0035D /* YYSingleOBC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		62F9E27A222E77F200A0035D /* AgentGitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AgentGitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F9E27E222E77F200A0035D /* AgentGitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AgentGitUITests.m; sourceTree = "<group>"; };
 		62F9E280222E77F200A0035D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62F9E28C222E78C200A0035D /* YYSingleOBC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYSingleOBC.h; sourceTree = "<group>"; };
+		62F9E28D222E78C200A0035D /* YYSingleOBC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYSingleOBC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				62F9E25B222E77F000A0035D /* AppDelegate.m */,
 				62F9E25D222E77F000A0035D /* ViewController.h */,
 				62F9E25E222E77F000A0035D /* ViewController.m */,
+				62F9E28C222E78C200A0035D /* YYSingleOBC.h */,
+				62F9E28D222E78C200A0035D /* YYSingleOBC.m */,
 				62F9E260222E77F000A0035D /* Main.storyboard */,
 				62F9E263222E77F200A0035D /* Assets.xcassets */,
 				62F9E265222E77F200A0035D /* LaunchScreen.storyboard */,
@@ -262,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62F9E28E222E78C200A0035D /* YYSingleOBC.m in Sources */,
 				62F9E25F222E77F000A0035D /* ViewController.m in Sources */,
 				62F9E26A222E77F200A0035D /* main.m in Sources */,
 				62F9E25C222E77F000A0035D /* AppDelegate.m in Sources */,
