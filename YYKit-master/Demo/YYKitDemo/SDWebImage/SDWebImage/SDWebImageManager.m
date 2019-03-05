@@ -150,7 +150,7 @@
         [self.runningOperations addObject:operation];
     }
     NSString *key = [self cacheKeyForURL:url];
-
+#pragma mark SDWebImage--SDImageCache从缓存查找图片是否已经下载 queryDiskCacheForKey:delegate:userInfo:.
     operation.cacheOperation = [self.imageCache queryDiskCacheForKey:key done:^(UIImage *image, SDImageCacheType cacheType) {
         if (operation.isCancelled) {
             @synchronized (self.runningOperations) {
@@ -161,6 +161,7 @@
         }
 
         if ((!image || options & SDWebImageRefreshCached) && (![self.delegate respondsToSelector:@selector(imageManager:shouldDownloadImageForURL:)] || [self.delegate imageManager:self shouldDownloadImageForURL:url])) {
+#pragma mark SDWebImage 先从内存图片缓存查找是否有图片，如果内存中已经有图片缓存;
             if (image && options & SDWebImageRefreshCached) {
                 dispatch_main_sync_safe(^{
                     // If image was found in the cache but SDWebImageRefreshCached is provided, notify about the cached image
@@ -184,6 +185,7 @@
                 // ignore image read from NSURLCache if image if cached but force refreshing
                 downloaderOptions |= SDWebImageDownloaderIgnoreCachedResponse;
             }
+#pragma mark SDWebImage 如果内存缓存中没有，生成 ｀NSOperation ｀添加到队列，开始从硬盘查找图片是否已经缓存
             id <SDWebImageOperation> subOperation = [self.imageDownloader downloadImageWithURL:url options:downloaderOptions progress:progressBlock completed:^(UIImage *downloadedImage, NSData *data, NSError *error, BOOL finished) {
                 __strong __typeof(weakOperation) strongOperation = weakOperation;
                 if (!strongOperation || strongOperation.isCancelled) {
@@ -282,6 +284,7 @@
             }
         }
         else {
+            
             // Image not in cache and download disallowed by delegate
             dispatch_main_sync_safe(^{
                 __strong __typeof(weakOperation) strongOperation = weakOperation;

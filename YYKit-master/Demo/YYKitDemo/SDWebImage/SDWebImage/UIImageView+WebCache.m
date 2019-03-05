@@ -59,7 +59,9 @@ static char TAG_ACTIVITY_SHOW;
         if ([self showActivityIndicatorView]) {
             [self addActivityIndicator];
         }
-
+#pragma mark-- SDWebImage 进入SDWebImageManager 类中downloadWithURL:delegate:options:userInfo:
+    //进入SDWebImageManager 类中downloadWithURL:delegate:options:userInfo:，交给
+//        SDImageCache从缓存查找图片是否已经下载
         __weak __typeof(self)wself = self;
         id <SDWebImageOperation> operation = [SDWebImageManager.sharedManager downloadImageWithURL:url options:options progress:progressBlock completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
             [wself removeActivityIndicator];
@@ -71,6 +73,7 @@ static char TAG_ACTIVITY_SHOW;
                     completedBlock(image, error, cacheType, url);
                     return;
                 }
+//#pragma mark SDWebImage  到 UIImageView+WebCache,等前端展示图片
                 else if (image) {
                     wself.image = image;
                     [wself setNeedsLayout];

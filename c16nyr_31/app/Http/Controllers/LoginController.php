@@ -25,14 +25,13 @@ class LoginController extends Controller
 
         $user = request(['email', 'password']);
 
-        dd(88);
-
         $remember = boolval(request('is_remember'));
         if (true == \Auth::attempt($user, $remember)) {
            return redirect('/posts');
         }
 
         return \Redirect::back()->withErrors("用户名密码错误");
+        
     }
 
     public function logout()

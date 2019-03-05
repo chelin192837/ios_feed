@@ -90,33 +90,33 @@
         make.bottom.equalTo(imageView.mas_bottom).offset(0);
         make.width.height.equalTo(@50);
     }];
-    
-    UIButton * leftBtn = [[UIButton alloc] init];
-    [leftBtn setTitle:@"左点击" forState:UIControlStateNormal];
-    [leftBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [leftBtn addTarget:self action:@selector(leftBtn) forControlEvents:UIControlEventTouchUpInside];
-    leftBtn.backgroundColor = [UIColor yellowColor];
-    [self.view addSubview:leftBtn];
-    [leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(centerBtn.mas_left).offset(-100);
-        make.bottom.equalTo(imageView.mas_bottom).offset(0);
-        make.width.height.equalTo(@80);
-    }];
-    
-    UIButton * rightBtn = [[UIButton alloc] init];
-    [rightBtn setTitle:@"右点击" forState:UIControlStateNormal];
-    [rightBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [rightBtn addTarget:self action:@selector(rightBtn) forControlEvents:UIControlEventTouchUpInside];
-    rightBtn.backgroundColor = [UIColor yellowColor];
-    [self.view addSubview:rightBtn];
-    [rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(centerBtn.mas_right).offset(50);
-        make.bottom.equalTo(imageView.mas_bottom).offset(0);
-        make.width.height.equalTo(@80);
-    }];
-    
-
-    [centerBtn setEnlargeEdge:100];
+//
+//    UIButton * leftBtn = [[UIButton alloc] init];
+//    [leftBtn setTitle:@"左点击" forState:UIControlStateNormal];
+//    [leftBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//    [leftBtn addTarget:self action:@selector(leftBtn) forControlEvents:UIControlEventTouchUpInside];
+//    leftBtn.backgroundColor = [UIColor yellowColor];
+//    [self.view addSubview:leftBtn];
+//    [leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(centerBtn.mas_left).offset(-100);
+//        make.bottom.equalTo(imageView.mas_bottom).offset(0);
+//        make.width.height.equalTo(@80);
+//    }];
+//
+//    UIButton * rightBtn = [[UIButton alloc] init];
+//    [rightBtn setTitle:@"右点击" forState:UIControlStateNormal];
+//    [rightBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//    [rightBtn addTarget:self action:@selector(rightBtn) forControlEvents:UIControlEventTouchUpInside];
+//    rightBtn.backgroundColor = [UIColor yellowColor];
+//    [self.view addSubview:rightBtn];
+//    [rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(centerBtn.mas_right).offset(50);
+//        make.bottom.equalTo(imageView.mas_bottom).offset(0);
+//        make.width.height.equalTo(@80);
+//    }];
+//
+//
+//    [centerBtn setEnlargeEdge:100];
     
     [self setNav];
 
@@ -162,17 +162,7 @@
     button.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
     [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-    
-//    UIImage * leftImage = [UIImage imageNamed:@"homeDingweiFanhuiBtn"];
-//    UIBarButtonItem *leftButon = [[UIBarButtonItem alloc] initWithImage:leftImage style:UIBarButtonItemStylePlain target:self action:@selector(back)];
-//
-//    UIBarButtonItem *fixedButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-//
-//    fixedButton.width = 0;
-//
-//    self.navigationItem.leftBarButtonItems = @[fixedButton, leftButon];
-    
-//    [button setEnlargeEdge:100];
+
     
 }
 

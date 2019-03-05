@@ -115,7 +115,7 @@ static CrashHandler *instance = nil;
         for (NSString *mode in (__bridge NSArray *)allModes) {
             CFRunLoopRunInMode((CFStringRef)mode, 0.001, false);
         }
-        NSLog(@"ignoreignoreignoreignoreignore");
+//        NSLog(@"ignoreignoreignoreignoreignore");
     }
     
     CFRelease(allModes);

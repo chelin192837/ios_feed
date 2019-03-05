@@ -35,6 +35,7 @@
     [self addCell:@"YYRunLoopTimerVC" class:@"YYRunLoopTimerVC" image:@"Weibo.jpg"];
     [self addCell:@"YYRunLoopImageVC" class:@"YYRunLoopImageVC" image:@"Weibo.jpg"];
     [self addCell:@"YYRunLoopCrachVC" class:@"YYRunLoopCrachVC" image:@"Weibo.jpg"];
+    [self addCell:@"YYStaticVC" class:@"YYStaticVC" image:@"Weibo.jpg"];
 
     if (!kiOS7Later) {
         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];

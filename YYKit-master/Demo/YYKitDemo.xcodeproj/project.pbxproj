@@ -162,6 +162,7 @@
 		6291D02C21CA779F00DF212D /* picBuiliding@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6291D02621CA779F00DF212D /* picBuiliding@3x.png */; };
 		62A5D82721BE0E4E0061D7BD /* YYNetWorkingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A5D82621BE0E4E0061D7BD /* YYNetWorkingVC.m */; };
 		62E5429B21A7FCEF005350B1 /* YYDefineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E5429A21A7FCEF005350B1 /* YYDefineViewController.m */; };
+		62F9E247222B9F2400A0035D /* YYStaticVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F9E246222B9F2400A0035D /* YYStaticVC.m */; };
 		ABDC320D1BEAFB870012A159 /* YYTextTagExample.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC320C1BEAFB870012A159 /* YYTextTagExample.m */; };
 		D9067DF11B975D3900F346EB /* YYTextExampleHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D9067DF01B975D3900F346EB /* YYTextExampleHelper.m */; };
 		D9067DF41B9813B500F346EB /* YYTextEditExample.m in Sources */ = {isa = PBXBuildFile; fileRef = D9067DF31B9813B500F346EB /* YYTextEditExample.m */; };
@@ -656,6 +657,8 @@
 		62A5D82621BE0E4E0061D7BD /* YYNetWorkingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYNetWorkingVC.m; sourceTree = "<group>"; };
 		62E5429921A7FCEF005350B1 /* YYDefineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYDefineViewController.h; sourceTree = "<group>"; };
 		62E5429A21A7FCEF005350B1 /* YYDefineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYDefineViewController.m; sourceTree = "<group>"; };
+		62F9E245222B9F2400A0035D /* YYStaticVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYStaticVC.h; sourceTree = "<group>"; };
+		62F9E246222B9F2400A0035D /* YYStaticVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYStaticVC.m; sourceTree = "<group>"; };
 		ABDC320B1BEAFB870012A159 /* YYTextTagExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextTagExample.h; sourceTree = "<group>"; };
 		ABDC320C1BEAFB870012A159 /* YYTextTagExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextTagExample.m; sourceTree = "<group>"; };
 		D9067DEF1B975D3900F346EB /* YYTextExampleHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextExampleHelper.h; sourceTree = "<group>"; };
@@ -1700,9 +1703,19 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		62F9E244222B9F1700A0035D /* Static */ = {
+			isa = PBXGroup;
+			children = (
+				62F9E245222B9F2400A0035D /* YYStaticVC.h */,
+				62F9E246222B9F2400A0035D /* YYStaticVC.m */,
+			);
+			path = Static;
+			sourceTree = "<group>";
+		};
 		D9067E041B98A39200F346EB /* Feed List */ = {
 			isa = PBXGroup;
 			children = (
+				62F9E244222B9F1700A0035D /* Static */,
 				623C07F8222505400049E853 /* RunLoop */,
 				6262468B2216B73700033AB1 /* SDWebImageVC */,
 				D9067E051B98A3B200F346EB /* YYFeedListExample.h */,
@@ -2617,6 +2630,7 @@
 				D9B2605F1BEE79370038C00A /* YYCGUtilities.m in Sources */,
 				D9B2605C1BEE79370038C00A /* NSThread+YYAdd.m in Sources */,
 				D9B260991BEE79370038C00A /* YYKeychain.m in Sources */,
+				62F9E247222B9F2400A0035D /* YYStaticVC.m in Sources */,
 				626DB86821C7B12A009386F7 /* MJRefreshConst.m in Sources */,
 				D9B2609D1BEE79370038C00A /* YYThreadSafeDictionary.m in Sources */,
 				623C080D2226758A0049E853 /* FluencyMonitor.m in Sources */,
