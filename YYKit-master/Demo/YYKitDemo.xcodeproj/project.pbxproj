@@ -163,6 +163,8 @@
 		62A5D82721BE0E4E0061D7BD /* YYNetWorkingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A5D82621BE0E4E0061D7BD /* YYNetWorkingVC.m */; };
 		62E5429B21A7FCEF005350B1 /* YYDefineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E5429A21A7FCEF005350B1 /* YYDefineViewController.m */; };
 		62F9E247222B9F2400A0035D /* YYStaticVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F9E246222B9F2400A0035D /* YYStaticVC.m */; };
+		62F9E24A222E677600A0035D /* YYSingleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F9E249222E677600A0035D /* YYSingleVC.m */; };
+		62F9E24D222E692E00A0035D /* YYSingleShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F9E24C222E692E00A0035D /* YYSingleShare.m */; };
 		ABDC320D1BEAFB870012A159 /* YYTextTagExample.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC320C1BEAFB870012A159 /* YYTextTagExample.m */; };
 		D9067DF11B975D3900F346EB /* YYTextExampleHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D9067DF01B975D3900F346EB /* YYTextExampleHelper.m */; };
 		D9067DF41B9813B500F346EB /* YYTextEditExample.m in Sources */ = {isa = PBXBuildFile; fileRef = D9067DF31B9813B500F346EB /* YYTextEditExample.m */; };
@@ -659,6 +661,10 @@
 		62E5429A21A7FCEF005350B1 /* YYDefineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYDefineViewController.m; sourceTree = "<group>"; };
 		62F9E245222B9F2400A0035D /* YYStaticVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYStaticVC.h; sourceTree = "<group>"; };
 		62F9E246222B9F2400A0035D /* YYStaticVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYStaticVC.m; sourceTree = "<group>"; };
+		62F9E248222E677600A0035D /* YYSingleVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYSingleVC.h; sourceTree = "<group>"; };
+		62F9E249222E677600A0035D /* YYSingleVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYSingleVC.m; sourceTree = "<group>"; };
+		62F9E24B222E692E00A0035D /* YYSingleShare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYSingleShare.h; sourceTree = "<group>"; };
+		62F9E24C222E692E00A0035D /* YYSingleShare.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYSingleShare.m; sourceTree = "<group>"; };
 		ABDC320B1BEAFB870012A159 /* YYTextTagExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextTagExample.h; sourceTree = "<group>"; };
 		ABDC320C1BEAFB870012A159 /* YYTextTagExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextTagExample.m; sourceTree = "<group>"; };
 		D9067DEF1B975D3900F346EB /* YYTextExampleHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextExampleHelper.h; sourceTree = "<group>"; };
@@ -1708,6 +1714,10 @@
 			children = (
 				62F9E245222B9F2400A0035D /* YYStaticVC.h */,
 				62F9E246222B9F2400A0035D /* YYStaticVC.m */,
+				62F9E248222E677600A0035D /* YYSingleVC.h */,
+				62F9E249222E677600A0035D /* YYSingleVC.m */,
+				62F9E24B222E692E00A0035D /* YYSingleShare.h */,
+				62F9E24C222E692E00A0035D /* YYSingleShare.m */,
 			);
 			path = Static;
 			sourceTree = "<group>";
@@ -2481,6 +2491,7 @@
 				6251D676221D56180040803E /* IQToolbar.m in Sources */,
 				D9B2607A1BEE79370038C00A /* YYImageCache.m in Sources */,
 				626DB8D421C8C80C009386F7 /* UIColor+Extend.m in Sources */,
+				62F9E24A222E677600A0035D /* YYSingleVC.m in Sources */,
 				626DB85F21C7B12A009386F7 /* AFImageDownloader.m in Sources */,
 				626DB85321C7B12A009386F7 /* JSONAPI.m in Sources */,
 				626DB87F21C7B12A009386F7 /* MASCompositeConstraint.m in Sources */,
@@ -2614,6 +2625,7 @@
 				D933C1621B7799A10065CDBB /* YYImageDisplayExample.m in Sources */,
 				D95340A51BA47D6E004FDE84 /* YYTextUndoRedoExample.m in Sources */,
 				623C0804222628E10049E853 /* YYRunLoopImageVC.m in Sources */,
+				62F9E24D222E692E00A0035D /* YYSingleShare.m in Sources */,
 				626DB86721C7B12A009386F7 /* UIScrollView+MJRefresh.m in Sources */,
 				D9B2609A1BEE79370038C00A /* YYReachability.m in Sources */,
 				D9067E071B98A3B200F346EB /* YYFeedListExample.m in Sources */,
