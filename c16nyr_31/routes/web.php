@@ -51,3 +51,5 @@ Route::get('/register', "\App\Http\Controllers\RegisterController@index");
 Route::post('/register', "\App\Http\Controllers\RegisterController@register");
 
 include_once("admin.php");
+
+include_once("api.php");
