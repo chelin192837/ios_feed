@@ -1,11 +1,10 @@
-@extends("layout.main")
-
-@section("content")
+<?php $__env->startSection("content"); ?>
 
     <div class="col-sm-8 blog-main">
 
         <form action="/posts" method="POST">
-            {{csrf_field()}}
+            <?php echo e(csrf_field()); ?>
+
             <div class="form-group">
                 <label>标题</label>
                 <input name="title" type="text" class="form-control" placeholder="这里是标题">
@@ -14,7 +13,7 @@
                 <label>内容</label>
                 <textarea id="content"  style="height:400px;max-height:500px;" name="content" class="form-control" placeholder="这里是内容"></textarea>
             </div>
-            @include("layout.error")
+            <?php echo $__env->make("layout.error", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
             <button type="submit" class="btn btn-default">提交</button>
         </form>
 
@@ -23,4 +22,5 @@
     </div><!-- /.blog-main -->
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make("layout.main", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

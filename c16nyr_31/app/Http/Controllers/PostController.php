@@ -35,9 +35,17 @@ class PostController extends Controller
             'title' => 'required|max:255|min:4',
             'content' => 'required|min:100',
         ]);
+
         $params = array_merge(request(['title', 'content']), ['user_id' => \Auth::id()]);
-        Post::create($params);
+
+        dd($params);
+
+//        Post::create($params);
+
+        Post::firstOrCreate($params);
+
         return redirect('/posts');
+
     }
 
     public function edit(Post $post)
