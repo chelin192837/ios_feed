@@ -28,6 +28,14 @@ class Post extends Model
         ];
     }
 
+//    protected $fillable = [
+//        'like',
+//        'title',
+//        'content',
+//        'user_id',
+//        'status'
+//    ];
+
 
     /*
      * 所有评论

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 
+use Redis;
+
 class PostController extends Controller
 {
     /*
@@ -13,6 +15,7 @@ class PostController extends Controller
     public function index()
     {
         $user = \Auth::user();
+
         $posts = Post::aviable()->orderBy('created_at', 'desc')->withCount(["zans", "comments"])->with(['user'])->paginate(6);
 
         return view('post/index', compact('posts'));
@@ -31,6 +34,30 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
+
+//        $redis = new Redis();
+
+//        $clicks = Redis::get($key);
+//
+//        dd(Redis::get('foo'));
+//
+//        $redis->connect('127.0.0.1', 6379);
+//
+//        echo "Server is running: "+ $redis;
+
+//        dd(9999);
+
+//        $key = 'redis_key';
+//
+//        $arr = array(
+//            'class'=>'高三一班',
+//            'name'=>'测试',
+//            'school'=>'一中',
+//        );
+//
+//        Redis::SET($key, $arr);
+
+
         $this->validate($request, [
             'title' => 'required|max:255|min:4',
             'content' => 'required|min:100',
@@ -38,7 +65,7 @@ class PostController extends Controller
 
         $params = array_merge(request(['title', 'content']), ['user_id' => \Auth::id()]);
 
-        dd($params);
+//        dd($params);
 
 //        Post::create($params);
 

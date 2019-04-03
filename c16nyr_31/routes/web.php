@@ -13,6 +13,7 @@
 Route::get('/', "\App\Http\Controllers\LoginController@index");
 
 Route::group(['middleware' => 'auth:web'], function(){
+
     // 文章
     Route::get('/posts', '\App\Http\Controllers\PostController@index');
     Route::get('/posts/create', '\App\Http\Controllers\PostController@create');
@@ -41,6 +42,7 @@ Route::group(['middleware' => 'auth:web'], function(){
 
     // 通知
     Route::get('/notices', '\App\Http\Controllers\NoticeController@index');
+
 });
 
 Route::get('/login', "\App\Http\Controllers\LoginController@index")->name('login');
