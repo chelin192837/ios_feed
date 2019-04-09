@@ -30,10 +30,9 @@
 
 + (void)initialize
 {
-    
     NSLog(@"initialize---YYSingleShare---");
-    
 }
+
 - (id)copyWithZone:(NSZone *)zone
 {
     return self;
