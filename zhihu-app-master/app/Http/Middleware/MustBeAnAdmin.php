@@ -8,7 +8,7 @@ class MustBeAnAdmin
 {
     /**
      * Handle an incoming request.
-     *
+     * @param  \__IMP__
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
      * @return mixed

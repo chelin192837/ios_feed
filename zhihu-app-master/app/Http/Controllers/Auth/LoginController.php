@@ -55,12 +55,18 @@ class LoginController extends Controller
 
         $this->incrementLoginAttempts($request);
 
+//       dd($request->all());
+
         return $this->sendFailedLoginResponse($request);
+
+
     }
 
     protected function attemptLogin(Request $request)
     {
-        $credentials = array_merge($this->credentials($request),['is_active'=>1]);
+//        $credentials = array_merge($this->credentials($request),['is_active'=>1]);
+//        dd($credentials);
+        $credentials = array_merge($this->credentials($request));
         return $this->guard()->attempt(
             $credentials, $request->has('remember')
         );

@@ -27,28 +27,9 @@
 //    [self addCell:@"Utility" class:@"YYUtilityExample"];
     [self addCell:@"Feed List Demo" class:@"YYFeedListExample"];
     [self.tableView reloadData];
-    
-//    NSArray* arr = @[@"chelin",@"liuying",@"zhongguoyuang"];
-    
-//    [arr objectAtIndex:5];
-    
-
 
     //[self log];
 }
-//// in your .h or inside a class extension
-//@property(nonatomic,strong)NSDateFormatter*formatter;
-//// inside the implementation (.m)
-//// When you need, just use self.formatter
-//- (NSDateFormatter*)formatter {
-//    if(!_formatter) {
-//        _formatter = [[NSDateFormatter alloc] init];
-//        _formatter.dateFormat =@"EEE MMM dd HH:mm:ss Z yyyy";
-//        // twitter date format
-//    }
-//    return_formatter;
-//    }
-
 
 + (NSMutableURLRequest*)imageRequestWithURL:(NSURL*)url {
     NSMutableURLRequest*request = [NSMutableURLRequest requestWithURL:url];
