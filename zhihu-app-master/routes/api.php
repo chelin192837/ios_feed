@@ -45,3 +45,8 @@ Route::get('/question/{id}/comments','CommentsController@question');
 
 
 Route::post('/comment','CommentsController@store');//用户评论
+
+
+Route::post('/impStruct','ImpStructController@index');//用户评论
+
+

@@ -58,8 +58,8 @@ Route::get("/people/{userName}/followers",'ProfileController@followers')->name('
 Route::get("/people/{userName}/following",'ProfileController@following')->name('following');//用户的个人主页
 
 
-
 Route::group(['namespace' => 'Admin'], function () {
+
     Route::get('/dashboard', 'AdminController@index')->name('admin.index'); //后台首页
     Route::get('/admin/profile','AdminController@adminInfo');//管理员资料
     Route::get('/admin/users','UsersController@index')->name('admin.users');//系统用户信息
@@ -80,4 +80,10 @@ Route::group(['namespace' => 'Admin'], function () {
 
     Route::get('/admin/topics/index','TopicsController@index')->name('admin.topics');//标签列表
     Route::delete('/admin/comment/{id}','TopicsController@destroy');//删除标签
+
+});
+
+
+Route::group(['namespace' => 'Instance'], function () {
+    Route::post('/impStruct','ImpStructController@index');//用户评论
 });
