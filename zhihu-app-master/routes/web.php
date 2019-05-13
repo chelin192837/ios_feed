@@ -85,5 +85,7 @@ Route::group(['namespace' => 'Admin'], function () {
 
 
 Route::group(['namespace' => 'Instance'], function () {
+
     Route::post('/impStruct','ImpStructController@index');//用户评论
+
 });
