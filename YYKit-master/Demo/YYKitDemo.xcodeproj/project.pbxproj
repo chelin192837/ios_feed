@@ -22,6 +22,7 @@
 		6248BB0C21CCB11600B56970 /* homeTuijiankehuBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 6248BB0921CCB11600B56970 /* homeTuijiankehuBtn.png */; };
 		6248BB0E21CCC2A400B56970 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6248BB0D21CCC2A400B56970 /* Images.xcassets */; };
 		6248BB1121CCF0C000B56970 /* RSDRDiscover.m in Sources */ = {isa = PBXBuildFile; fileRef = 6248BB0F21CCF0C000B56970 /* RSDRDiscover.m */; };
+		624CF5FC226FFD14002FE866 /* YYSDWebCacheVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 624CF5FB226FFD14002FE866 /* YYSDWebCacheVC.m */; };
 		6251D615221CEBE00040803E /* NSData+YYURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 6251D614221CEBE00040803E /* NSData+YYURL.m */; };
 		6251D618221CEC580040803E /* UIButton+RSDCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 6251D617221CEC580040803E /* UIButton+RSDCount.m */; };
 		6251D675221D56180040803E /* IQTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6251D654221D56180040803E /* IQTextView.m */; };
@@ -161,6 +162,8 @@
 		6291D02B21CA779F00DF212D /* myMorentouxiangIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6291D02521CA779F00DF212D /* myMorentouxiangIcon@2x.png */; };
 		6291D02C21CA779F00DF212D /* picBuiliding@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6291D02621CA779F00DF212D /* picBuiliding@3x.png */; };
 		62A5D82721BE0E4E0061D7BD /* YYNetWorkingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A5D82621BE0E4E0061D7BD /* YYNetWorkingVC.m */; };
+		62D03D7E229C384400910467 /* UIView+EnlargeTouchArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D03D7D229C384400910467 /* UIView+EnlargeTouchArea.m */; };
+		62D03D91229F875200910467 /* SDViewDidLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D03D90229F875200910467 /* SDViewDidLayout.m */; };
 		62E5429B21A7FCEF005350B1 /* YYDefineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E5429A21A7FCEF005350B1 /* YYDefineViewController.m */; };
 		62F9E247222B9F2400A0035D /* YYStaticVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F9E246222B9F2400A0035D /* YYStaticVC.m */; };
 		62F9E24A222E677600A0035D /* YYSingleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F9E249222E677600A0035D /* YYSingleVC.m */; };
@@ -378,6 +381,8 @@
 		6248BB0D21CCC2A400B56970 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6248BB0F21CCF0C000B56970 /* RSDRDiscover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDRDiscover.m; sourceTree = "<group>"; };
 		6248BB1021CCF0C000B56970 /* RSDRDiscover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDRDiscover.h; sourceTree = "<group>"; };
+		624CF5FA226FFD14002FE866 /* YYSDWebCacheVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYSDWebCacheVC.h; sourceTree = "<group>"; };
+		624CF5FB226FFD14002FE866 /* YYSDWebCacheVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYSDWebCacheVC.m; sourceTree = "<group>"; };
 		6251D613221CEBE00040803E /* NSData+YYURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+YYURL.h"; sourceTree = "<group>"; };
 		6251D614221CEBE00040803E /* NSData+YYURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+YYURL.m"; sourceTree = "<group>"; };
 		6251D616221CEC580040803E /* UIButton+RSDCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+RSDCount.h"; sourceTree = "<group>"; };
@@ -657,6 +662,10 @@
 		6291D02621CA779F00DF212D /* picBuiliding@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "picBuiliding@3x.png"; sourceTree = "<group>"; };
 		62A5D82521BE0E4E0061D7BD /* YYNetWorkingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYNetWorkingVC.h; sourceTree = "<group>"; };
 		62A5D82621BE0E4E0061D7BD /* YYNetWorkingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYNetWorkingVC.m; sourceTree = "<group>"; };
+		62D03D7C229C384400910467 /* UIView+EnlargeTouchArea.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+EnlargeTouchArea.h"; sourceTree = "<group>"; };
+		62D03D7D229C384400910467 /* UIView+EnlargeTouchArea.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+EnlargeTouchArea.m"; sourceTree = "<group>"; };
+		62D03D8F229F875200910467 /* SDViewDidLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDViewDidLayout.h; sourceTree = "<group>"; };
+		62D03D90229F875200910467 /* SDViewDidLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDViewDidLayout.m; sourceTree = "<group>"; };
 		62E5429921A7FCEF005350B1 /* YYDefineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYDefineViewController.h; sourceTree = "<group>"; };
 		62E5429A21A7FCEF005350B1 /* YYDefineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYDefineViewController.m; sourceTree = "<group>"; };
 		62F9E245222B9F2400A0035D /* YYStaticVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYStaticVC.h; sourceTree = "<group>"; };
@@ -1043,6 +1052,15 @@
 				623C0808222631890049E853 /* DWURunLoopWorkDistribution.m */,
 			);
 			path = DWURunLoopWorkDistribution;
+			sourceTree = "<group>";
+		};
+		624CF5F9226FFCEA002FE866 /* SD_ImageView */ = {
+			isa = PBXGroup;
+			children = (
+				624CF5FA226FFD14002FE866 /* YYSDWebCacheVC.h */,
+				624CF5FB226FFD14002FE866 /* YYSDWebCacheVC.m */,
+			);
+			path = SD_ImageView;
 			sourceTree = "<group>";
 		};
 		6251D652221D56180040803E /* IQKeyboardManager */ = {
@@ -1698,6 +1716,15 @@
 			path = NetWorking;
 			sourceTree = "<group>";
 		};
+		62D03D8E229F873A00910467 /* SDViewDidLayout */ = {
+			isa = PBXGroup;
+			children = (
+				62D03D8F229F875200910467 /* SDViewDidLayout.h */,
+				62D03D90229F875200910467 /* SDViewDidLayout.m */,
+			);
+			path = SDViewDidLayout;
+			sourceTree = "<group>";
+		};
 		62E5429821A7FCC0005350B1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -1725,6 +1752,8 @@
 		D9067E041B98A39200F346EB /* Feed List */ = {
 			isa = PBXGroup;
 			children = (
+				62D03D8E229F873A00910467 /* SDViewDidLayout */,
+				624CF5F9226FFCEA002FE866 /* SD_ImageView */,
 				62F9E244222B9F1700A0035D /* Static */,
 				623C07F8222505400049E853 /* RunLoop */,
 				6262468B2216B73700033AB1 /* SDWebImageVC */,
@@ -1990,6 +2019,8 @@
 				D97484D819CAAD2900F46DE1 /* YYAppDelegate.m */,
 				D943B48B19EC2BC100A9481E /* YYRootViewController.h */,
 				D943B48C19EC2BC100A9481E /* YYRootViewController.m */,
+				62D03D7C229C384400910467 /* UIView+EnlargeTouchArea.h */,
+				62D03D7D229C384400910467 /* UIView+EnlargeTouchArea.m */,
 				D91A99311B5A8D1600EF3A3E /* Model */,
 				D91A99331B5A8D2A00EF3A3E /* Image */,
 				D91A99341B5A8D3500EF3A3E /* Text */,
@@ -2547,6 +2578,7 @@
 				626DB90D21C8C96D009386F7 /* SDWebImageDownloaderOperation.m in Sources */,
 				626DB92121C92761009386F7 /* RSDonsultantCell.m in Sources */,
 				626DB90921C8C96D009386F7 /* UIImage+MultiFormat.m in Sources */,
+				624CF5FC226FFD14002FE866 /* YYSDWebCacheVC.m in Sources */,
 				D9B260501BEE79370038C00A /* NSArray+YYAdd.m in Sources */,
 				D9B260621BEE79370038C00A /* UIBezierPath+YYAdd.m in Sources */,
 				D9B2605E1BEE79370038C00A /* CALayer+YYAdd.m in Sources */,
@@ -2584,9 +2616,11 @@
 				626DB86421C7B12A009386F7 /* AFNetworkReachabilityManager.m in Sources */,
 				6251D675221D56180040803E /* IQTextView.m in Sources */,
 				D9B2607C1BEE79370038C00A /* YYSpriteSheetImage.m in Sources */,
+				62D03D7E229C384400910467 /* UIView+EnlargeTouchArea.m in Sources */,
 				D9B2607B1BEE79370038C00A /* YYImageCoder.m in Sources */,
 				D9B260801BEE79370038C00A /* YYClassInfo.m in Sources */,
 				626DB90C21C8C96D009386F7 /* SDImageCache.m in Sources */,
+				62D03D91229F875200910467 /* SDViewDidLayout.m in Sources */,
 				D9B260981BEE79370038C00A /* YYGestureRecognizer.m in Sources */,
 				6248BB1121CCF0C000B56970 /* RSDRDiscover.m in Sources */,
 				626DB85B21C7B12A009386F7 /* UIButton+AFNetworking.m in Sources */,
@@ -2857,7 +2891,7 @@
 					"\"$(SRCROOT)/YYKit/Prefix/PrefixHeader.h\"",
 				);
 				INFOPLIST_FILE = YYKitDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2897,7 +2931,7 @@
 					"\"$(SRCROOT)/YYKit/Prefix/PrefixHeader.h\"",
 				);
 				INFOPLIST_FILE = YYKitDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

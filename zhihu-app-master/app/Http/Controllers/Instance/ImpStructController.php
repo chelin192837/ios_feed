@@ -7,12 +7,10 @@ use App\Http\Controllers\Controller;
 
 class ImpStructController extends Controller
 {
-    //
 
-    public function index()
+    public function answers()
     {
-
-        dd(111);
+        return view('answers.answers');
     }
 
 }

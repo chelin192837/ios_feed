@@ -34,12 +34,9 @@ class QuestionsController extends Controller
         return view('questions.create');
     }
 
-
     //创建问题
     public function store(StoreQuestionRequest $request)
     {
-//        dd($request->get('topics'));
-//        dd($request->all());
         $topics = $this->questionRepository->normalizeTopics($request->get('topics')?:[]);
         $data = [
             'title' => $request->get('title'),

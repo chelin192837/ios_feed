@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,11 +12,12 @@
     <!-- Styles -->
     <link href="{{elixir('/css/app.css')}}" rel="stylesheet">
     @yield("header-css")
+
     @show
 
 <!-- Scripts -->
     <script>
-        window.Laravel = <?php echo json_encode([
+        window.Laravel =<?php echo json_encode([
             'csrfToken' => csrf_token(),
         ]); ?>;
         Laravel.apiToken = "{{Auth::check()?'Bearer '.Auth::user()->api_token:'Bearer '}}";
@@ -26,7 +28,9 @@
         }
         @endif
     </script>
+
 </head>
+
 <body>
 <div id="app">
     <nav class="navbar navbar-inverse navbar-static-top">
@@ -115,6 +119,7 @@
             </div>
         </div>
     </nav>
+
     <div class="container">
         @if (session()->has('flash_notification.message'))
             <div class="alert alert-{{ session('flash_notification.level') }}">
@@ -123,6 +128,7 @@
             </div>
         @endif
     </div>
+
     @yield('content')
 </div>
 
@@ -132,10 +138,12 @@
 <script>
     $('#flash-overlay-modal').modal();
 </script>
+
 <!-- 配置文件 -->
 <script type="text/javascript" src="{{ asset('vendor/ueditor/ueditor.config.js') }}"></script>
 <!-- 编辑器源码文件 -->
 <script type="text/javascript" src="{{ asset('vendor/ueditor/ueditor.all.js') }}"></script>
+
 <script>
     window.UEDITOR_CONFIG.serverUrl = '{{ config('ueditor.route.name') }}'
 </script>

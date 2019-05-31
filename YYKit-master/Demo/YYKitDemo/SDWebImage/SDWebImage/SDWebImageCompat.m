@@ -11,7 +11,7 @@
 #if !__has_feature(objc_arc)
 #error SDWebImage is ARC only. Either turn on ARC for the project or use -fobjc-arc flag
 #endif
-
+//inline 为了解决c中函数宏定义时,不能对参数进行检测的问题
 inline UIImage *SDScaledImageForKey(NSString *key, UIImage *image) {
     if (!image) {
         return nil;
@@ -49,3 +49,16 @@ inline UIImage *SDScaledImageForKey(NSString *key, UIImage *image) {
 }
 
 NSString *const SDWebImageErrorDomain = @"SDWebImageErrorDomain";
+
+
+
+
+
+
+
+
+
+
+
+
+

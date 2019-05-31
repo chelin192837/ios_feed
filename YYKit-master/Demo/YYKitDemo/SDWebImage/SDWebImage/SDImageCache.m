@@ -58,7 +58,7 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
 
 @interface SDImageCache ()
 
-@property (strong, nonatomic) NSCache *memCache;
+@property (strong, nonatomic) NSCache *memCache;//内存
 @property (strong, nonatomic) NSString *diskCachePath;
 @property (strong, nonatomic) NSMutableArray *customPaths;
 @property (SDDispatchQueueSetterSementics, nonatomic) dispatch_queue_t ioQueue;
@@ -67,7 +67,7 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
 
 
 @implementation SDImageCache {
-    NSFileManager *_fileManager;
+    NSFileManager *_fileManager;//缓存
 }
 
 + (SDImageCache *)sharedImageCache {
@@ -485,7 +485,7 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
 - (void)clearDisk {
     [self clearDiskOnCompletion:nil];
 }
-
+//全部删除
 - (void)clearDiskOnCompletion:(SDWebImageNoParamsBlock)completion
 {
     dispatch_async(self.ioQueue, ^{
@@ -503,22 +503,32 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
     });
 }
 
+//清理磁盘
 - (void)cleanDisk {
     [self cleanDiskWithCompletionBlock:nil];
 }
 
+//clean:两种清理方式,时间和磁盘大小
 - (void)cleanDiskWithCompletionBlock:(SDWebImageNoParamsBlock)completionBlock {
     dispatch_async(self.ioQueue, ^{
+        //找到路径
         NSURL *diskCacheURL = [NSURL fileURLWithPath:self.diskCachePath isDirectory:YES];
+        //NSURLIsDirectoryKey: 拿到目录的KEY
+        //NSURLContentModificationDateKey: 最后修改时间的KEY
+        //NSURLTotalFileAllocatedSizeKey: 文件总大小
         NSArray *resourceKeys = @[NSURLIsDirectoryKey, NSURLContentModificationDateKey, NSURLTotalFileAllocatedSizeKey];
 
         // This enumerator prefetches useful properties for our cache files.
+        //枚举器
+        //NSDirectoryEnumerationSkipsHiddenFiles :不遍历隐藏文件
+        //迭代器的设计模式
         NSDirectoryEnumerator *fileEnumerator = [_fileManager enumeratorAtURL:diskCacheURL
                                                    includingPropertiesForKeys:resourceKeys
                                                                       options:NSDirectoryEnumerationSkipsHiddenFiles
                                                                  errorHandler:NULL];
-
+        //截止日期(返回最大时间之前的时间),7天之前的日期
         NSDate *expirationDate = [NSDate dateWithTimeIntervalSinceNow:-self.maxCacheAge];
+        
         NSMutableDictionary *cacheFiles = [NSMutableDictionary dictionary];
         NSUInteger currentCacheSize = 0;
 
@@ -536,29 +546,37 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
             }
 
             // Remove files that are older than the expiration date;
+            //拿到最后的修改日期
             NSDate *modificationDate = resourceValues[NSURLContentModificationDateKey];
+            //判断是不是最后的修改日期,是的话,添加到删除的数组里面
             if ([[modificationDate laterDate:expirationDate] isEqualToDate:expirationDate]) {
-                [urlsToDelete addObject:fileURL];
+                [urlsToDelete addObject:fileURL];//
                 continue;
             }
 
             // Store a reference to this file and account for its total size.
+            //如果没有过期,文件就添加到cacheFiles中去;
             NSNumber *totalAllocatedSize = resourceValues[NSURLTotalFileAllocatedSizeKey];
             currentCacheSize += [totalAllocatedSize unsignedIntegerValue];
             [cacheFiles setObject:resourceValues forKey:fileURL];
         }
         
-        for (NSURL *fileURL in urlsToDelete) {
+        for (NSURL *fileURL in urlsToDelete) { //删除文件
             [_fileManager removeItemAtURL:fileURL error:nil];
         }
 
         // If our remaining disk cache exceeds a configured maximum size, perform a second
         // size-based cleanup pass.  We delete the oldest files first.
+        //判断是否超出磁盘缓存大小,self.maxCacheSize自己设置的缓存大小
         if (self.maxCacheSize > 0 && currentCacheSize > self.maxCacheSize) {
             // Target half of our maximum cache size for this cleanup pass.
             const NSUInteger desiredCacheSize = self.maxCacheSize / 2;
 
             // Sort the remaining cache files by their last modification time (oldest first).
+            //按照神谕缓存文件的上次修改时间排序
+            //用她们最后更新时间舜秀排序保留下来的缓存文件
+
+#pragma mark SD --- 删除文件按照磁盘大小和过期时间
             NSArray *sortedFiles = [cacheFiles keysSortedByValueWithOptions:NSSortConcurrent
                                                             usingComparator:^NSComparisonResult(id obj1, id obj2) {
                                                                 return [obj1[NSURLContentModificationDateKey] compare:obj2[NSURLContentModificationDateKey]];

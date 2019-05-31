@@ -58,6 +58,9 @@ Route::get("/people/{userName}/followers",'ProfileController@followers')->name('
 Route::get("/people/{userName}/following",'ProfileController@following')->name('following');//用户的个人主页
 
 
+Route::get("/answers",'Instance\ImpStructController@answers')->name('answers');//回答页面
+
+
 Route::group(['namespace' => 'Admin'], function () {
 
     Route::get('/dashboard', 'AdminController@index')->name('admin.index'); //后台首页

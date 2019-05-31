@@ -53,8 +53,7 @@ static char TAG_ACTIVITY_SHOW;
         });
     }
     
-    if (url) {
-
+    if (url){
         // check if activityView is enabled or not
         if ([self showActivityIndicatorView]) {
             [self addActivityIndicator];
