@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Bootstrap 模板</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,74 +23,13 @@
 
     <div class="row" >
 
-        <div class="col-md-6"
-             style="background-color: #dedef8;
-         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
-
-            <p>以下实例包含了4个网格，但是我们在小设备浏览时无法确定网格显示的位置。 </p>
-
-            <p class="text-left">居中文本文案</p>
-
-            <abbr title="World Wide Web">WWW</abbr>
-
-
-            <table class="table table-bordered" style="border-color: #0ea432">
-
-                <caption>城市名称表格</caption>
-                <thead>
-                <tr>
-                    <td>省</td>
-                    <td>市</td>
-                    <td>乡</td>
-                </tr>
-                </thead>
-
-                <tbody>
-                <tr>
-                    <td>北京</td>
-                    <td>北京</td>
-                    <td>海淀</td>
-                </tr>
-
-                <tr>
-                    <td>辽宁</td>
-                    <td>沈阳</td>
-                    <td>三好街</td>
-                </tr>
-
-                </tbody>
-            </table>
-
-        </div>
-
         <div>
-            <p>
-                <button type="button" class="btn btn-default">
-                    <span class="glyphicon glyphicon-sort-by-attributes"></span>
-                </button>
-                <button type="button" class="btn btn-default">
-                    <span class="glyphicon glyphicon-sort-by-attributes-alt"></span>
-                </button>
-                <button type="button" class="btn btn-default">
-                    <span class="glyphicon glyphicon-sort-by-order"></span>
-                </button>
-                <button type="button" class="btn btn-default">
-                    <span class="glyphicon glyphicon-sort-by-order-alt"></span>
-                </button>
-            </p>
-            <button type="button" class="btn btn-default btn-lg">
-                <span class="glyphicon glyphicon-user"></span> User
-            </button>
-            <button type="button" class="btn btn-default btn-sm">
-                <span class="glyphicon glyphicon-user"></span> User
-            </button>
-            <button type="button" class="btn btn-default btn-xs">
-                <span class="glyphicon glyphicon-user"></span> User
-            </button>
+
+         <button type="button" class="btn btn-app">按钮</button>
+
+
 
         </div>
-
-
 
     </div>
 
